@@ -22,9 +22,21 @@ Partial Class DashboardMahasiswa
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "DashboardMahasiswa"
+        SuspendLayout()
+        ' 
+        ' DashboardMahasiswa
+        ' 
+        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(1896, 967)
+        FormBorderStyle = FormBorderStyle.Fixed3D
+        MaximizeBox = False
+        MaximumSize = New Size(1920, 1080)
+        MdiChildrenMinimizedAnchorBottom = False
+        MinimumSize = New Size(1918, 1018)
+        Name = "DashboardMahasiswa"
+        Text = "DashboardMahasiswa"
+        WindowState = FormWindowState.Maximized
+        ResumeLayout(False)
     End Sub
 End Class

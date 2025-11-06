@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormKelolaAkun
+Partial Class FormKelolaRuangan
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,71 +22,70 @@ Partial Class FormKelolaAkun
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Username = New Label()
-        Role = New Label()
+        Label1 = New Label()
+        Label2 = New Label()
         Label3 = New Label()
-        TxtUsername = New TextBox()
-        TxtPassword = New TextBox()
-        CmbRole = New ComboBox()
+        TxtNamaRuangan = New TextBox()
+        TxtKapasitas = New TextBox()
+        TxtDeskripsi = New TextBox()
         BtnTambah = New Button()
         BtnEdit = New Button()
         BtnHapus = New Button()
-        DgvAkun = New DataGridView()
-        CType(DgvAkun, ComponentModel.ISupportInitialize).BeginInit()
+        DgvRuangan = New DataGridView()
+        CType(DgvRuangan, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' Username
+        ' Label1
         ' 
-        Username.AutoSize = True
-        Username.Location = New Point(66, 44)
-        Username.Name = "Username"
-        Username.Size = New Size(75, 20)
-        Username.TabIndex = 0
-        Username.Text = "Username"
+        Label1.AutoSize = True
+        Label1.Location = New Point(60, 33)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(111, 20)
+        Label1.TabIndex = 0
+        Label1.Text = "Nama Ruangan"
         ' 
-        ' Role
+        ' Label2
         ' 
-        Role.AutoSize = True
-        Role.Location = New Point(66, 83)
-        Role.Name = "Role"
-        Role.Size = New Size(39, 20)
-        Role.TabIndex = 1
-        Role.Text = "Role"
+        Label2.AutoSize = True
+        Label2.Location = New Point(60, 74)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(72, 20)
+        Label2.TabIndex = 1
+        Label2.Text = "Kapasitas"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(66, 119)
+        Label3.Location = New Point(60, 117)
         Label3.Name = "Label3"
-        Label3.Size = New Size(70, 20)
+        Label3.Size = New Size(69, 20)
         Label3.TabIndex = 2
-        Label3.Text = "Password"
+        Label3.Text = "Deskripsi"
         ' 
-        ' TxtUsername
+        ' TxtNamaRuangan
         ' 
-        TxtUsername.Location = New Point(218, 44)
-        TxtUsername.Name = "TxtUsername"
-        TxtUsername.Size = New Size(476, 27)
-        TxtUsername.TabIndex = 3
+        TxtNamaRuangan.Location = New Point(266, 30)
+        TxtNamaRuangan.Name = "TxtNamaRuangan"
+        TxtNamaRuangan.Size = New Size(713, 27)
+        TxtNamaRuangan.TabIndex = 3
         ' 
-        ' TxtPassword
+        ' TxtKapasitas
         ' 
-        TxtPassword.Location = New Point(218, 112)
-        TxtPassword.Name = "TxtPassword"
-        TxtPassword.Size = New Size(476, 27)
-        TxtPassword.TabIndex = 4
+        TxtKapasitas.Location = New Point(266, 74)
+        TxtKapasitas.Name = "TxtKapasitas"
+        TxtKapasitas.Size = New Size(713, 27)
+        TxtKapasitas.TabIndex = 4
         ' 
-        ' CmbRole
+        ' TxtDeskripsi
         ' 
-        CmbRole.FormattingEnabled = True
-        CmbRole.Location = New Point(218, 75)
-        CmbRole.Name = "CmbRole"
-        CmbRole.Size = New Size(476, 28)
-        CmbRole.TabIndex = 5
+        TxtDeskripsi.Location = New Point(266, 114)
+        TxtDeskripsi.Name = "TxtDeskripsi"
+        TxtDeskripsi.Size = New Size(713, 27)
+        TxtDeskripsi.TabIndex = 5
         ' 
         ' BtnTambah
         ' 
-        BtnTambah.Location = New Point(218, 214)
+        BtnTambah.Location = New Point(266, 197)
         BtnTambah.Name = "BtnTambah"
         BtnTambah.Size = New Size(94, 29)
         BtnTambah.TabIndex = 6
@@ -95,7 +94,7 @@ Partial Class FormKelolaAkun
         ' 
         ' BtnEdit
         ' 
-        BtnEdit.Location = New Point(387, 214)
+        BtnEdit.Location = New Point(477, 197)
         BtnEdit.Name = "BtnEdit"
         BtnEdit.Size = New Size(94, 29)
         BtnEdit.TabIndex = 7
@@ -104,57 +103,56 @@ Partial Class FormKelolaAkun
         ' 
         ' BtnHapus
         ' 
-        BtnHapus.Location = New Point(547, 214)
+        BtnHapus.Location = New Point(705, 197)
         BtnHapus.Name = "BtnHapus"
         BtnHapus.Size = New Size(94, 29)
         BtnHapus.TabIndex = 8
         BtnHapus.Text = "Hapus"
         BtnHapus.UseVisualStyleBackColor = True
         ' 
-        ' DgvAkun
+        ' DgvRuangan
         ' 
-        DgvAkun.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvAkun.Location = New Point(-2, 264)
-        DgvAkun.Name = "DgvAkun"
-        DgvAkun.RowHeadersWidth = 51
-        DgvAkun.Size = New Size(1900, 708)
-        DgvAkun.TabIndex = 9
+        DgvRuangan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DgvRuangan.Location = New Point(0, 262)
+        DgvRuangan.Name = "DgvRuangan"
+        DgvRuangan.RowHeadersWidth = 51
+        DgvRuangan.Size = New Size(1899, 708)
+        DgvRuangan.TabIndex = 9
         ' 
-        ' FormKelolaAkun
+        ' FormKelolaRuangan
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1896, 967)
-        Controls.Add(DgvAkun)
+        Controls.Add(DgvRuangan)
         Controls.Add(BtnHapus)
         Controls.Add(BtnEdit)
         Controls.Add(BtnTambah)
-        Controls.Add(CmbRole)
-        Controls.Add(TxtPassword)
-        Controls.Add(TxtUsername)
+        Controls.Add(TxtDeskripsi)
+        Controls.Add(TxtKapasitas)
+        Controls.Add(TxtNamaRuangan)
         Controls.Add(Label3)
-        Controls.Add(Role)
-        Controls.Add(Username)
+        Controls.Add(Label2)
+        Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.Fixed3D
         MaximizeBox = False
         MaximumSize = New Size(1920, 1080)
         MinimumSize = New Size(1918, 1018)
-        Name = "FormKelolaAkun"
-        Text = "FormKelolaAkun"
-        WindowState = FormWindowState.Maximized
-        CType(DgvAkun, ComponentModel.ISupportInitialize).EndInit()
+        Name = "FormKelolaRuangan"
+        Text = "FormKelolaRuangan"
+        CType(DgvRuangan, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents Username As Label
-    Friend WithEvents Role As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TxtUsername As TextBox
-    Friend WithEvents TxtPassword As TextBox
-    Friend WithEvents CmbRole As ComboBox
+    Friend WithEvents TxtNamaRuangan As TextBox
+    Friend WithEvents TxtKapasitas As TextBox
+    Friend WithEvents TxtDeskripsi As TextBox
     Friend WithEvents BtnTambah As Button
     Friend WithEvents BtnEdit As Button
     Friend WithEvents BtnHapus As Button
-    Friend WithEvents DgvAkun As DataGridView
+    Friend WithEvents DgvRuangan As DataGridView
 End Class

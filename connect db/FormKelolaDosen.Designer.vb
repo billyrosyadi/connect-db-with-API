@@ -200,7 +200,7 @@ Partial Class FormKelolaDosen
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(953, 532)
+        ClientSize = New Size(1896, 967)
         Controls.Add(BtnHapus)
         Controls.Add(BtnEdit)
         Controls.Add(BtnKembali)
@@ -219,8 +219,14 @@ Partial Class FormKelolaDosen
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(DgvDosen)
+        FormBorderStyle = FormBorderStyle.Fixed3D
+        MaximizeBox = False
+        MaximumSize = New Size(1920, 1080)
+        MdiChildrenMinimizedAnchorBottom = False
+        MinimumSize = New Size(1918, 1018)
         Name = "FormKelolaDosen"
         Text = "FormKelolaDosen"
+        WindowState = FormWindowState.Maximized
         CType(DgvDosen, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

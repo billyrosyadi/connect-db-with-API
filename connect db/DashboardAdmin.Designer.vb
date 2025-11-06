@@ -26,21 +26,21 @@ Partial Class DashboardAdmin
         KelolaDosen = New PictureBox()
         KelolaMahasiswa = New PictureBox()
         KelolaAkun = New PictureBox()
-        ToolStrip1 = New ToolStrip()
-        ToolStripButton1 = New ToolStripButton()
-        ToolStripButton2 = New ToolStripButton()
+        KelolaJadwal = New PictureBox()
+        KelolaRuangan = New PictureBox()
         CType(KelolaDosen, ComponentModel.ISupportInitialize).BeginInit()
         CType(KelolaMahasiswa, ComponentModel.ISupportInitialize).BeginInit()
         CType(KelolaAkun, ComponentModel.ISupportInitialize).BeginInit()
-        ToolStrip1.SuspendLayout()
+        CType(KelolaJadwal, ComponentModel.ISupportInitialize).BeginInit()
+        CType(KelolaRuangan, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' KelolaDosen
         ' 
         KelolaDosen.Image = CType(resources.GetObject("KelolaDosen.Image"), Image)
-        KelolaDosen.Location = New Point(12, 12)
+        KelolaDosen.Location = New Point(193, 54)
         KelolaDosen.Name = "KelolaDosen"
-        KelolaDosen.Size = New Size(125, 131)
+        KelolaDosen.Size = New Size(313, 332)
         KelolaDosen.SizeMode = PictureBoxSizeMode.StretchImage
         KelolaDosen.TabIndex = 1
         KelolaDosen.TabStop = False
@@ -48,9 +48,9 @@ Partial Class DashboardAdmin
         ' KelolaMahasiswa
         ' 
         KelolaMahasiswa.Image = CType(resources.GetObject("KelolaMahasiswa.Image"), Image)
-        KelolaMahasiswa.Location = New Point(159, 12)
+        KelolaMahasiswa.Location = New Point(634, 54)
         KelolaMahasiswa.Name = "KelolaMahasiswa"
-        KelolaMahasiswa.Size = New Size(125, 131)
+        KelolaMahasiswa.Size = New Size(378, 332)
         KelolaMahasiswa.SizeMode = PictureBoxSizeMode.StretchImage
         KelolaMahasiswa.TabIndex = 2
         KelolaMahasiswa.TabStop = False
@@ -58,64 +58,61 @@ Partial Class DashboardAdmin
         ' KelolaAkun
         ' 
         KelolaAkun.Image = CType(resources.GetObject("KelolaAkun.Image"), Image)
-        KelolaAkun.Location = New Point(314, 12)
+        KelolaAkun.Location = New Point(1169, 54)
         KelolaAkun.Name = "KelolaAkun"
-        KelolaAkun.Size = New Size(125, 131)
+        KelolaAkun.Size = New Size(333, 332)
         KelolaAkun.SizeMode = PictureBoxSizeMode.StretchImage
         KelolaAkun.TabIndex = 3
         KelolaAkun.TabStop = False
         ' 
-        ' ToolStrip1
+        ' KelolaJadwal
         ' 
-        ToolStrip1.ImageScalingSize = New Size(20, 20)
-        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripButton1, ToolStripButton2})
-        ToolStrip1.Location = New Point(0, 0)
-        ToolStrip1.Name = "ToolStrip1"
-        ToolStrip1.Size = New Size(956, 27)
-        ToolStrip1.TabIndex = 4
-        ToolStrip1.Text = "ToolStrip1"
+        KelolaJadwal.Image = CType(resources.GetObject("KelolaJadwal.Image"), Image)
+        KelolaJadwal.Location = New Point(193, 418)
+        KelolaJadwal.Name = "KelolaJadwal"
+        KelolaJadwal.Size = New Size(333, 332)
+        KelolaJadwal.SizeMode = PictureBoxSizeMode.StretchImage
+        KelolaJadwal.TabIndex = 4
+        KelolaJadwal.TabStop = False
         ' 
-        ' ToolStripButton1
+        ' KelolaRuangan
         ' 
-        ToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image
-        ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), Image)
-        ToolStripButton1.ImageTransparentColor = Color.Magenta
-        ToolStripButton1.Name = "ToolStripButton1"
-        ToolStripButton1.Size = New Size(29, 24)
-        ToolStripButton1.Text = "ToolStripButton1"
-        ' 
-        ' ToolStripButton2
-        ' 
-        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
-        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
-        ToolStripButton2.ImageTransparentColor = Color.Magenta
-        ToolStripButton2.Name = "ToolStripButton2"
-        ToolStripButton2.Size = New Size(29, 24)
-        ToolStripButton2.Text = "ToolStripButton2"
+        KelolaRuangan.Image = CType(resources.GetObject("KelolaRuangan.Image"), Image)
+        KelolaRuangan.Location = New Point(634, 418)
+        KelolaRuangan.Name = "KelolaRuangan"
+        KelolaRuangan.Size = New Size(333, 332)
+        KelolaRuangan.SizeMode = PictureBoxSizeMode.StretchImage
+        KelolaRuangan.TabIndex = 5
+        KelolaRuangan.TabStop = False
         ' 
         ' DashboardAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(956, 464)
-        Controls.Add(ToolStrip1)
+        ClientSize = New Size(1898, 971)
+        Controls.Add(KelolaRuangan)
+        Controls.Add(KelolaJadwal)
         Controls.Add(KelolaAkun)
         Controls.Add(KelolaMahasiswa)
         Controls.Add(KelolaDosen)
+        FormBorderStyle = FormBorderStyle.Fixed3D
+        MaximizeBox = False
+        MaximumSize = New Size(1920, 1080)
+        MdiChildrenMinimizedAnchorBottom = False
+        MinimumSize = New Size(1918, 1018)
         Name = "DashboardAdmin"
         Text = "DashboardAdmin"
+        WindowState = FormWindowState.Maximized
         CType(KelolaDosen, ComponentModel.ISupportInitialize).EndInit()
         CType(KelolaMahasiswa, ComponentModel.ISupportInitialize).EndInit()
         CType(KelolaAkun, ComponentModel.ISupportInitialize).EndInit()
-        ToolStrip1.ResumeLayout(False)
-        ToolStrip1.PerformLayout()
+        CType(KelolaJadwal, ComponentModel.ISupportInitialize).EndInit()
+        CType(KelolaRuangan, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
     Friend WithEvents KelolaDosen As PictureBox
     Friend WithEvents KelolaMahasiswa As PictureBox
     Friend WithEvents KelolaAkun As PictureBox
-    Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripButton1 As ToolStripButton
-    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents KelolaJadwal As PictureBox
+    Friend WithEvents KelolaRuangan As PictureBox
 End Class

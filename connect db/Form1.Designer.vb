@@ -22,73 +22,71 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Label1 = New Label()
-        Label2 = New Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         txtUser = New TextBox()
         txtPass = New TextBox()
         Button1 = New Button()
         SuspendLayout()
         ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(189, 153)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(75, 20)
-        Label1.TabIndex = 0
-        Label1.Text = "Username"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(194, 186)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(70, 20)
-        Label2.TabIndex = 1
-        Label2.Text = "Password"
-        ' 
         ' txtUser
         ' 
-        txtUser.Location = New Point(292, 153)
+        txtUser.BorderStyle = BorderStyle.None
+        txtUser.Font = New Font("Unispace", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtUser.Location = New Point(724, 422)
+        txtUser.Multiline = True
         txtUser.Name = "txtUser"
-        txtUser.Size = New Size(349, 27)
+        txtUser.Size = New Size(712, 40)
         txtUser.TabIndex = 2
         ' 
         ' txtPass
         ' 
-        txtPass.Location = New Point(292, 183)
+        txtPass.BorderStyle = BorderStyle.None
+        txtPass.Font = New Font("Unispace", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtPass.Location = New Point(724, 486)
+        txtPass.Multiline = True
         txtPass.Name = "txtPass"
         txtPass.PasswordChar = "x"c
-        txtPass.Size = New Size(349, 27)
+        txtPass.Size = New Size(712, 40)
         txtPass.TabIndex = 3
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(549, 243)
+        Button1.BackColor = Color.Transparent
+        Button1.Cursor = Cursors.Hand
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatAppearance.MouseDownBackColor = Color.Transparent
+        Button1.FlatAppearance.MouseOverBackColor = Color.Transparent
+        Button1.FlatStyle = FlatStyle.Flat
+        Button1.Font = New Font("Sharpy Shadow", 23.9999981F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Button1.Location = New Point(802, 584)
         Button1.Name = "Button1"
-        Button1.Size = New Size(92, 31)
+        Button1.Size = New Size(243, 46)
         Button1.TabIndex = 4
         Button1.Text = "Login"
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(1896, 967)
         Controls.Add(Button1)
         Controls.Add(txtPass)
         Controls.Add(txtUser)
-        Controls.Add(Label2)
-        Controls.Add(Label1)
+        DoubleBuffered = True
+        FormBorderStyle = FormBorderStyle.Fixed3D
+        MaximizeBox = False
+        MaximumSize = New Size(1920, 1080)
+        MdiChildrenMinimizedAnchorBottom = False
+        MinimumSize = New Size(1918, 1018)
         Name = "Form1"
+        SizeGripStyle = SizeGripStyle.Hide
         Text = "Form1"
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents txtUser As TextBox
     Friend WithEvents txtPass As TextBox
     Friend WithEvents Button1 As Button
