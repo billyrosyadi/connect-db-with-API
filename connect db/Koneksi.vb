@@ -2,8 +2,15 @@
 Imports System.Text
 Imports System.Collections.Specialized ' Diperlukan untuk NameValueCollection
 
+
 Module Koneksi
 
+    ' ####################################################################
+    ' #                    DATA SESI PENGGUNA (GLOBAL)                   #
+    ' ####################################################################
+    ' Deklarasi harus ada di sini, langsung di bawah 'Module Koneksi'.
+    Public LoggedInUsername As String = ""
+    Public UserRole As String = ""
     ' 1. KONFIGURASI API (Ganti dengan URL Server Anda)
     ' Ganti alamat ini dengan alamat ngrok/server Anda yang aktif
     Public Const Url As String = "https://8ed8233ea798.ngrok-free.app"
@@ -24,6 +31,8 @@ Module Koneksi
     Public Const ApiUrl_Kelola_Jadwal As String = Url & "/API/manage_jadwal.php"
     'API baru untuk mengelola ruangan 
     Public Const ApiUrl_Kelola_Ruangan As String = Url & "/API/manage_ruangan.php"
+    'API baru untuk absesnsi
+    Public Const ApiUrl_Kelola_Absensi As String = Url & "/API/manage_absensi.php"
 
     ' ####################################################################
     ' #                     FUNGSI KHUSUS LOGIN API                      #

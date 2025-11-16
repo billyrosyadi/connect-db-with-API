@@ -17,12 +17,29 @@ Public Class Form1
 
             ' 3. Cek Status Login dari Server
             If result("status").ToString() = "success" Then
-                ' Ambil nilai role dari server
+
                 Dim userRole As String = result("role").ToString()
 
-                MsgBox("Login Berhasil! Sebagai: " & userRole, MsgBoxStyle.Information, "Sukses")
+                ' PENTING: Periksa apakah 'username' ada dan tidak kosong
+                Dim username As String = Nothing
 
-                ' 4. Arahkan ke Dashboard berdasarkan Peran (ROLE)
+                If result.ContainsKey("username") AndAlso result("username") IsNot Nothing Then
+                    username = result("username").ToString()
+                End If
+
+                ' === VALIDASI KRITIS ===
+                If String.IsNullOrWhiteSpace(username) Then
+                    MsgBox("Login berhasil, tetapi API gagal mengembalikan ID Username. Mohon periksa API Login PHP Anda.", MsgBoxStyle.Critical)
+                    Exit Sub ' HENTIKAN PROSES JIKA USERNAME KOSONG
+                End If
+
+                ' 1. ISI VARIABEL SESI GLOBAL
+                Koneksi.UserRole = userRole
+                Koneksi.LoggedInUsername = username ' Simpan nilai yang sudah divalidasi
+
+                MsgBox("Login Berhasil! Sebagai: " & userRole & ". Username: " & username, MsgBoxStyle.Information, "Sukses")
+
+                ' 4. Arahkan ke Dashboard
                 Select Case userRole.ToLower()
                     Case "admin"
                         Dim adminDash As New DashboardAdmin()
@@ -51,5 +68,7 @@ Public Class Form1
 
     End Sub
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class
