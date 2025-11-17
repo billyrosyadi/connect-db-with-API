@@ -30,6 +30,7 @@ Partial Class Form1
         ' 
         ' txtUser
         ' 
+        txtUser.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         txtUser.BorderStyle = BorderStyle.None
         txtUser.Font = New Font("Unispace", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         txtUser.Location = New Point(724, 422)
@@ -40,6 +41,7 @@ Partial Class Form1
         ' 
         ' txtPass
         ' 
+        txtPass.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         txtPass.BorderStyle = BorderStyle.None
         txtPass.Font = New Font("Unispace", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         txtPass.Location = New Point(724, 486)
@@ -51,6 +53,7 @@ Partial Class Form1
         ' 
         ' Button1
         ' 
+        Button1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Button1.BackColor = Color.Transparent
         Button1.Cursor = Cursors.Hand
         Button1.FlatAppearance.BorderSize = 0

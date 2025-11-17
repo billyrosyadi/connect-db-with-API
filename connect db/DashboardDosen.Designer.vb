@@ -38,7 +38,7 @@ Partial Class DashboardDosen
         BtnLihatJadwalLengkap.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         BtnLihatJadwalLengkap.BackgroundImageLayout = ImageLayout.None
         BtnLihatJadwalLengkap.Image = CType(resources.GetObject("BtnLihatJadwalLengkap.Image"), Image)
-        BtnLihatJadwalLengkap.Location = New Point(41, 32)
+        BtnLihatJadwalLengkap.Location = New Point(388, 32)
         BtnLihatJadwalLengkap.MaximumSize = New Size(200, 200)
         BtnLihatJadwalLengkap.Name = "BtnLihatJadwalLengkap"
         BtnLihatJadwalLengkap.Size = New Size(200, 200)
@@ -51,7 +51,7 @@ Partial Class DashboardDosen
         BtnNilaiWeb.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         BtnNilaiWeb.BackgroundImageLayout = ImageLayout.None
         BtnNilaiWeb.Image = CType(resources.GetObject("BtnNilaiWeb.Image"), Image)
-        BtnNilaiWeb.Location = New Point(372, 32)
+        BtnNilaiWeb.Location = New Point(663, 32)
         BtnNilaiWeb.MaximumSize = New Size(200, 200)
         BtnNilaiWeb.Name = "BtnNilaiWeb"
         BtnNilaiWeb.Size = New Size(200, 200)
@@ -64,10 +64,9 @@ Partial Class DashboardDosen
         BtnAbsensi.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         BtnAbsensi.BackgroundImageLayout = ImageLayout.None
         BtnAbsensi.Image = CType(resources.GetObject("BtnAbsensi.Image"), Image)
-        BtnAbsensi.Location = New Point(749, 32)
-        BtnAbsensi.MaximumSize = New Size(200, 200)
+        BtnAbsensi.Location = New Point(993, 12)
         BtnAbsensi.Name = "BtnAbsensi"
-        BtnAbsensi.Size = New Size(200, 200)
+        BtnAbsensi.Size = New Size(200, 276)
         BtnAbsensi.SizeMode = PictureBoxSizeMode.CenterImage
         BtnAbsensi.TabIndex = 3
         BtnAbsensi.TabStop = False
@@ -85,6 +84,7 @@ Partial Class DashboardDosen
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         ClientSize = New Size(1898, 971)
         Controls.Add(DgvJadwalHariIni)
         Controls.Add(BtnAbsensi)

@@ -1,145 +1,98 @@
-﻿Imports System.Net
-Imports System.Text
-Imports System.Collections.Specialized ' Diperlukan untuk NameValueCollection
+﻿Imports System.Net 'diperlukan untuk webclient atau httpwebrequest yang intinya untuk melakukan request ke server API
+Imports System.Text 'di gunakan untuk memanipulasi string karakter
+Imports System.Collections.Specialized 'di gunakan untuk menyiapkan parameter permintaan
 
 
 Module Koneksi
-
-    ' ####################################################################
-    ' #                    DATA SESI PENGGUNA (GLOBAL)                   #
-    ' ####################################################################
-    ' Deklarasi harus ada di sini, langsung di bawah 'Module Koneksi'.
+    'mendeklarasikan variabel untuk keprluan koneksi'.
     Public LoggedInUsername As String = ""
     Public UserRole As String = ""
-    ' 1. KONFIGURASI API (Ganti dengan URL Server Anda)
-    ' Ganti alamat ini dengan alamat ngrok/server Anda yang aktif
+    'KONFIGURASI API
+    'pada bagian ini akan di definisikan url untuk rujukan API yang akan di gunakan
     Public Const Url As String = "https://8ed8233ea798.ngrok-free.app"
-
-    ' URL untuk endpoint Login yang sudah kita buat
+    'path lengkap untuk API login
     Public Const ApiUrl_User_Login As String = Url & "/API/login.php"
-
-    ' Contoh URL untuk CRUD data mahasiswa (hanya sebagai referensi)
+    'path lengkap untuk API membaca data 
     Public Const ApiUrl_Mahasiswa_Read As String = Url & "/API/get_mahasiswa_data.php"
 
-    ' API baru untuk mengelola Profil Dosen
+    'path lengkap untuk API membaca data dosen pada form kelola dosen
     Public Const ApiUrl_Dosen_Profile As String = Url & "/API/manage_dosen_profile.php"
-    ' API baru untuk mengelola Profil Mahasiswa
+    'path lengkap untuk API membaca data mahasiswa pada form kelola mahasiswa
     Public Const ApiUrl_Mahasiswa_Profile As String = Url & "/API/manage_mahasiswa_profile.php"
-    'API baru untuk mengelola akun user
+    'path lengkap untuk API mengelola akun pengguna pada form kelola akun
     Public Const ApiUrl_Kelola_Akun As String = Url & "/API/manage_user_profile.php"
-    'API baru untuk mengelola jadwal kuliah
+    'path lengkap untuk API mengelola jadwal pada form kelola jadwal
     Public Const ApiUrl_Kelola_Jadwal As String = Url & "/API/manage_jadwal.php"
-    'API baru untuk mengelola ruangan 
+    'path lengkap untuk API mengelola ruangan pada form kelola ruangan 
     Public Const ApiUrl_Kelola_Ruangan As String = Url & "/API/manage_ruangan.php"
-    'API baru untuk absesnsi
+    'path lengkap untuk API mengelola absensi pada form absensi dosen
     Public Const ApiUrl_Kelola_Absensi As String = Url & "/API/manage_absensi.php"
-
-    ' ####################################################################
-    ' #                     FUNGSI KHUSUS LOGIN API                      #
-    ' ####################################################################
-
-    ''' <summary>
-    ''' Mengirim username dan password ke endpoint login menggunakan metode POST (UploadValues).
-    ''' </summary>
-    ''' <returns>String JSON respons dari API (status, message, role).</returns>
+    'portal web cusus mahasiswa
+    Public Const PortalUrl_Mahasiswa As String = Url & "/dp/mahasiswa.php"
+    'portal web cusus yang lain
+    Public Const PortalUrl_Lain As String = Url & "dp/orang_luar.php"
+    'BAGIAN LOGIN
     Public Function LoginKeAPI(ByVal username As String, ByVal password As String) As String
         Dim responseResult As String = ""
         Try
             Using webClient As New WebClient()
-                ' Siapkan data yang akan dikirim (key-value pair)
+                'iapkan data yang akan dikirim ke server berupa username dan password untuk keperluan verifikasi login
                 Dim postData As New NameValueCollection()
                 postData.Add("username", username)
                 postData.Add("password", password)
-
-                ' Kirim data ke API Login dan terima respons
+                'kirim data ke API Login dan terima respons
                 Dim responseBytes As Byte() = webClient.UploadValues(ApiUrl_User_Login, "POST", postData)
-
-                ' Menggunakan UTF8 karena JSON umumnya menggunakan encoding ini
-                responseResult = Encoding.UTF8.GetString(responseBytes)
-
+                responseResult = Encoding.UTF8.GetString(responseBytes)
             End Using
         Catch ex As Exception
-            ' Tangani kesalahan koneksi (API offline, alamat salah, dll.)
+            'jika terjadi error saat koneksi ke API login, tampilkan pesan error
             MessageBox.Show("Gagal Koneksi ke API Login: " & ApiUrl_User_Login & vbCrLf & "Pesan Error: " & ex.Message, "Error Login API", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         Return responseResult
     End Function
-
-    ' --- DI DALAM MODULE KONEKSI ---
-
-    ' ####################################################################
-    ' #                     FUNGSI KHUSUS CRUD API                       #
-    ' ####################################################################
-
-    ''' <summary>
-    ''' Mengambil data JSON dari API menggunakan metode GET (Digunakan untuk READ data).
-    ''' </summary>
-    ''' <param name="apiUrl">URL API lengkap, termasuk parameter GET.</param>
-    ''' <returns>String JSON respons dari API.</returns>
+    'di dalam module koneksi.vb ini akan di tambahkan fungsi khusus untuk keperluan CRUD API
+    'Mengambil data JSON dari API menggunakan metode GET di gunakan untuk READ data URL API lengkap,dan mengembalikannya sebagai string teks
     Public Function GetJsonFromAPI(ByVal apiUrl As String) As String
+        'memastikan variabel memiliki nilai yang jelas sebelum digunakan di blok Try
         Dim responseResult As String = ""
+        'seluruh operasi pengunduhan data ditempatkan di dalam blok try-catch di bawah ini
         Try
+            'membuat objek baru dari kelas webclient untuk melakukan request ke server API
             Using webClient As New WebClient()
-                ' Set encoding UTF8
+                'bagian di bawah ini di mengatur encoding yang akan di gunakan untuk membaca data yang di unduh dari server API
                 webClient.Encoding = Encoding.UTF8
-
-                ' Unduh string JSON dari URL
+                'bagian di gunakan untuk mengunduh string JSON dari URL API
                 responseResult = webClient.DownloadString(apiUrl)
             End Using
+            'pada bagian bawah jika terjadi error selama proses koneksi ke API READ, tangkap exception dan tampilkan pesan error
         Catch ex As Exception
             MessageBox.Show("Gagal Koneksi ke API READ (" & apiUrl & "): " & vbCrLf & "Pesan Error: " & ex.Message, "Error API READ", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         Return responseResult
     End Function
-
-
-    ' --- Di Module Koneksi.vb ---
-
-    ''' <summary>
-    ''' Mengirim data ke API menggunakan metode POST (Digunakan untuk CREATE, UPDATE, DELETE).
-    ''' FUNGSI INI DITINGKATKAN UNTUK MENANGKAP DETAIL ERROR 500.
-    ''' </summary>
-    ''' <param name="apiUrl">URL API lengkap.</param>
-    ''' <param name="postData">String data yang akan dikirim, format: key1=value1&key2=value2</param>
-    ''' <returns>String JSON respons dari API.</returns>
+    'mengirim data ke API menggunakan metode POST digunakan untuk CREATE, UPDATE, DELETE
     Public Function KirimDataKeAPI(ByVal apiUrl As String, ByVal postData As String) As String
+        'memastikan variabel memiliki nilai yang jelas sebelum digunakan di blok Try
         Dim responseResult As String = ""
         Try
+            'membuat objek baru dari kelas webclient untuk menangani koneksi jaringan 
             Using webClient As New System.Net.WebClient()
+                'pada baris di bawah ini memberi tahu server bahawa data yang di kirim berbentuk data formulir web tradisional(untuk jelasnya sillahkan browsing sendiri)
                 webClient.Headers(System.Net.HttpRequestHeader.ContentType) = "application/x-www-form-urlencoded"
+                'mengatur encoding yang akan di gunakan untuk mengirim dan menerima data dari server API
                 webClient.Encoding = System.Text.Encoding.UTF8
 
                 Dim postBytes As Byte() = System.Text.Encoding.UTF8.GetBytes(postData)
+                'pada baris di bawah ini mengirim data POST ke server API dan menerima respons
                 Dim responseBytes As Byte() = webClient.UploadData(apiUrl, "POST", postBytes)
 
                 responseResult = System.Text.Encoding.UTF8.GetString(responseBytes)
             End Using
             Return responseResult
 
-        Catch ex As System.Net.WebException
-            Dim responseText As String = "Tidak ada respons server detail (mungkin timeout/koneksi terputus)."
-
-            ' JIKA TERJADI ERROR HTTP (500), BACA RESPON DETAIL DARI SERVER
-            If ex.Response IsNot Nothing Then
-                Using stream As System.IO.StreamReader = New System.IO.StreamReader(ex.Response.GetResponseStream())
-                    responseText = stream.ReadToEnd()
-                End Using
-            End If
-
-            ' TAMPILKAN PESAN ERROR YANG BARU DAN KRITIS!
-            MessageBox.Show("Gagal Koneksi ke API POST (" & apiUrl & "): " & vbCrLf &
-                        "Pesan Error: " & ex.Message & vbCrLf & vbCrLf &
-                        "DETAIL SERVER: " & responseText,
-                        "Error API POST (500/400)", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
-            Return ""
-
-        Catch ex As Exception
+        Catch ex As Exception 'menangkap error yang terjadi selama proses koneksi ke API POST
             MessageBox.Show("Gagal Koneksi ke API POST (" & apiUrl & "): " & vbCrLf & "Pesan Error: " & ex.Message, "Error API POST", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return ""
         End Try
     End Function
-
-    ' --- End Module diletakkan di bagian akhir file ---
-
 End Module

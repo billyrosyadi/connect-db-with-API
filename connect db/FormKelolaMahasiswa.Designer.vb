@@ -179,7 +179,7 @@ Partial Class FormKelolaMahasiswa
         ' CmbJurusan
         ' 
         CmbJurusan.FormattingEnabled = True
-        CmbJurusan.Items.AddRange(New Object() {"Teknik Keperawatan", "Sastra Informatika"})
+        CmbJurusan.Items.AddRange(New Object() {"S3 Teknik Keperawatan", "S2 Sastra Informatika", "S1 Pendidikan Agama Islam", "S2 Arsitektur lanskap", "S1 Teknik Biologi Tumbuhan", "D3 Sistem Kelautan Tropika", "S1 Entomologi", "S2 Entomologi", "S3 Entomologi", "S1 Ilmu Aquakultur", "S2 Ilmu Aquakultur", "S1 Ilmu Biomedis Hewan", "S3 Teknik Perhutanan", "S3 Sastra Kelautan", "S1 Ilmu Tanah", "S1 Mikrobiologi", "S1 Krimatologi Terapan", "S2 Primatologi", "S1 Statistika Terapan", "S2 Teknologi Kelautan", "S3 Teknologi Pangan", "S1 Astronomi", "S2 Astronomi", "S3 Astronomi", "S1 Farmasi", "S2 Farmasi ", "S3 Farmasi", "S1 Biologi Reproduksi", "S2 Ilmu Forensik", "S3 Ilmu Bio Medis"})
         CmbJurusan.Location = New Point(1083, 91)
         CmbJurusan.Name = "CmbJurusan"
         CmbJurusan.Size = New Size(742, 28)

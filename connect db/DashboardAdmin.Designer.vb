@@ -38,7 +38,7 @@ Partial Class DashboardAdmin
         ' KelolaDosen
         ' 
         KelolaDosen.Image = CType(resources.GetObject("KelolaDosen.Image"), Image)
-        KelolaDosen.Location = New Point(193, 54)
+        KelolaDosen.Location = New Point(374, 54)
         KelolaDosen.Name = "KelolaDosen"
         KelolaDosen.Size = New Size(313, 332)
         KelolaDosen.SizeMode = PictureBoxSizeMode.StretchImage
@@ -48,7 +48,7 @@ Partial Class DashboardAdmin
         ' KelolaMahasiswa
         ' 
         KelolaMahasiswa.Image = CType(resources.GetObject("KelolaMahasiswa.Image"), Image)
-        KelolaMahasiswa.Location = New Point(634, 54)
+        KelolaMahasiswa.Location = New Point(794, 54)
         KelolaMahasiswa.Name = "KelolaMahasiswa"
         KelolaMahasiswa.Size = New Size(378, 332)
         KelolaMahasiswa.SizeMode = PictureBoxSizeMode.StretchImage
@@ -58,7 +58,7 @@ Partial Class DashboardAdmin
         ' KelolaAkun
         ' 
         KelolaAkun.Image = CType(resources.GetObject("KelolaAkun.Image"), Image)
-        KelolaAkun.Location = New Point(1169, 54)
+        KelolaAkun.Location = New Point(1281, 64)
         KelolaAkun.Name = "KelolaAkun"
         KelolaAkun.Size = New Size(333, 332)
         KelolaAkun.SizeMode = PictureBoxSizeMode.StretchImage
@@ -68,7 +68,7 @@ Partial Class DashboardAdmin
         ' KelolaJadwal
         ' 
         KelolaJadwal.Image = CType(resources.GetObject("KelolaJadwal.Image"), Image)
-        KelolaJadwal.Location = New Point(193, 418)
+        KelolaJadwal.Location = New Point(619, 437)
         KelolaJadwal.Name = "KelolaJadwal"
         KelolaJadwal.Size = New Size(333, 332)
         KelolaJadwal.SizeMode = PictureBoxSizeMode.StretchImage
@@ -78,7 +78,7 @@ Partial Class DashboardAdmin
         ' KelolaRuangan
         ' 
         KelolaRuangan.Image = CType(resources.GetObject("KelolaRuangan.Image"), Image)
-        KelolaRuangan.Location = New Point(634, 418)
+        KelolaRuangan.Location = New Point(1190, 437)
         KelolaRuangan.Name = "KelolaRuangan"
         KelolaRuangan.Size = New Size(333, 332)
         KelolaRuangan.SizeMode = PictureBoxSizeMode.StretchImage
@@ -89,6 +89,7 @@ Partial Class DashboardAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         ClientSize = New Size(1898, 971)
         Controls.Add(KelolaRuangan)
         Controls.Add(KelolaJadwal)

@@ -1,24 +1,22 @@
-﻿Imports Newtonsoft.Json.Linq
+﻿'ya bagian ini untuk meng import library yang diperlukan
+Imports Newtonsoft.Json.Linq
 Imports System.Net
 Imports Newtonsoft.Json
 Public Class FormKelolaJadwal
-
+    'bagian di bawah ini adalah deklarasi variabel untuk menyimpan data daftar mata kuliah dan dosen yang di muat dari serperr, dan nantinya data ini akan di gunakan untuk mengisi combobox
     Private MatkulList As DataTable
     Private DosenList As DataTable
     Private Sub FormKelolaJadwal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' 1. Inisialisasi ComboBox statis
+        'bagian untuk inisialisasi ComboBox statis, saya coba coba ternyata ada cara sperti ini juga
         CmbHari.Items.AddRange(New Object() {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"})
-
-        ' 2. Muat data lookup dari API
+        'memanggil loadlookupdata untuk memuat data mata kuliah dan dosen dari server
         LoadLookupData()
-
-        ' 3. Tampilkan data jadwal utama
+        'untuk menamilkan semua jadwal yang sudah ada di database
         TampilkanDataJadwal()
     End Sub
 
-    ' Tambahkan prosedur untuk mereset form
+    'prosedur untuk mereset form
     Private Sub ResetForm()
-        ' TxtIDJadwal.Text = "" ' Jika ada ID Jadwal
         TxtKelas.Text = ""
         CmbHari.SelectedIndex = -1
         TxtJamMulai.Text = ""
@@ -26,82 +24,72 @@ Public Class FormKelolaJadwal
         TxtPengumuman.Text = ""
         CmbMatkul.SelectedIndex = -1
         CmbDosen.SelectedIndex = -1
-
-        ' Aktifkan kembali tombol yang mungkin dinonaktifkan
-        ' BtnTambah.Enabled = True
-        ' BtnEdit.Enabled = False
-        ' BtnHapus.Enabled = False
     End Sub
-    Private Sub LoadLookupData()
-        ' --- Load Mata Kuliah ---
+    Private Sub LoadLookupData() 'bagian untuk memuat data mata kuliah yang nantinya akan di tampilkan di combobox
         Try
-            Dim jsonMatkul As String = Koneksi.KirimDataKeAPI(Koneksi.ApiUrl_Kelola_Jadwal, "action=read_matkul")
-            MatkulList = JsonConvert.DeserializeObject(Of DataTable)(jsonMatkul)
-
-            If MatkulList IsNot Nothing Then ' <-- PENTING: Cek Data
+            Dim jsonMatkul As String = Koneksi.KirimDataKeAPI(Koneksi.ApiUrl_Kelola_Jadwal, "action=read_matkul") 'pad abagian ini memanggil fungsi kirimdatakeapi dari module koneksi untuk meminta daftar mata kuliah dari server menggunakan action read_matkul
+            MatkulList = JsonConvert.DeserializeObject(Of DataTable)(jsonMatkul) 'respons json di ubah menjadi objek datatable(matkullist), dan datatable ini akan di gunakan sebagai sumber data combobox 
+            'bagian di bawah di guanakan untuk validasi dan binding data ke combobox
+            If MatkulList IsNot Nothing Then 'memastikan data tidak kosong
                 CmbMatkul.DataSource = MatkulList
                 CmbMatkul.DisplayMember = "nama_matkul"
                 CmbMatkul.ValueMember = "id_matkul"
                 CmbMatkul.SelectedIndex = -1
             Else
-                MsgBox("API Matkul mengembalikan data kosong atau error JSON.", MsgBoxStyle.Exclamation)
+                MsgBox("API matkul mengembalikan data kosong atau error JSON.", MsgBoxStyle.Exclamation)
             End If
 
         Catch ex As Exception
-            MsgBox("Gagal memuat daftar Mata Kuliah: " & ex.Message, MsgBoxStyle.Critical)
+            MsgBox("gagal memuat daftar matkul: " & ex.Message, MsgBoxStyle.Critical)
         End Try
-
-        ' --- Load Dosen ---
         Try
+            'pada bagian ini memanggil kirim data ke api untuk meminta daftar dosen dari server menggunakan action read_dosen
             Dim jsonDosen As String = Koneksi.KirimDataKeAPI(Koneksi.ApiUrl_Kelola_Jadwal, "action=read_dosen")
-            DosenList = JsonConvert.DeserializeObject(Of DataTable)(jsonDosen)
+            DosenList = JsonConvert.DeserializeObject(Of DataTable)(jsonDosen) 'respons json di ubah menjadi objek datatable(dosenlist), dan datatable ini akan di gunakan sebagai sumber data combobox
 
-            If DosenList IsNot Nothing Then ' <-- PENTING: Cek Data
+            If DosenList IsNot Nothing Then 'memastikan data tidak kosong
                 CmbDosen.DataSource = DosenList
-                CmbDosen.DisplayMember = "nama_dosen" ' Sesuai alias AS nama_dosen di PHP
+                CmbDosen.DisplayMember = "nama_dosen"
                 CmbDosen.ValueMember = "username"
                 CmbDosen.SelectedIndex = -1
             Else
-                MsgBox("API Dosen mengembalikan data kosong atau error JSON.", MsgBoxStyle.Exclamation)
+                MsgBox("API dosen mengembalikan data kosong atau error JSON.", MsgBoxStyle.Exclamation)
             End If
 
         Catch ex As Exception
-            MsgBox("Gagal memuat daftar Dosen: " & ex.Message, MsgBoxStyle.Critical)
+            MsgBox("gagal memuat daftar dosen: " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
-    Private Sub TampilkanDataJadwal()
+    Private Sub TampilkanDataJadwal() 'bagian untuk menampilkan data jadwal dari server ke datagridview
         Try
+            'memanggil kirimdata ke api untuk meminta daftar jadwal dari server menggunakan action read
             Dim responseJson As String = Koneksi.KirimDataKeAPI(Koneksi.ApiUrl_Kelola_Jadwal, "action=read")
-
-            If String.IsNullOrEmpty(responseJson) Then
-                ' Error: API kosong (Mungkin error 23acc9)
-                MsgBox("API mengembalikan respons kosong atau error PHP. Cek API Anda.", MsgBoxStyle.Critical)
+            If String.IsNullOrEmpty(responseJson) Then 'jika respons kosong atau tidak ada data maaka tampilkan pesan error
+                MsgBox("API mengembalikan respons kosong atau error. silahkan hubungi developer aplikasi", MsgBoxStyle.Critical)
                 Return
             End If
-
+            'mengubah respons json yang berisi array objek jadwal menjadi objek datatable menggunkan library newtonsoft.json
             Dim dt As DataTable = JsonConvert.DeserializeObject(Of DataTable)(responseJson)
 
             If dt Is Nothing OrElse dt.Rows.Count = 0 Then
-                ' Jika tabel kosong, tidak perlu bind atau hide kolom
+                'jika tabel kosong, tidak perlu bind atau hide kolom
                 DgvJadwal.DataSource = Nothing
-                MsgBox("Data Jadwal Kosong. Harap tambahkan data terlebih dahulu.", MsgBoxStyle.Information)
+                MsgBox("data jadwal masih kosong ya, jadi tambahkan data terlebih dahulu.", MsgBoxStyle.Information)
                 Return
             End If
 
-            DgvJadwal.DataSource = dt
-
-            ' --- KOREKSI KRITIS DI SINI ---
-            ' Cek apakah kolom "id_jadwal" ada sebelum menyembunyikannya
+            DgvJadwal.DataSource = dt 'bind data ke datagridview
+            'mekanisme pengaman ganda untuk memastikan kolom ada sebelum mengaksesnya
             If DgvJadwal.Columns.Contains("id_jadwal") Then
-                DgvJadwal.Columns("id_jadwal").Visible = False ' Kolom ID disembunyikan
+                DgvJadwal.Columns("id_jadwal").Visible = False 'pada bagian ini menyembunyikan kolom id_jadwal dari pengguna dengan mekanisme jika kolom di temukan maka hasil dari pengecekan if adalah true, dan properti visible dari kolom tersebut di atur menjadi false
             End If
 
-            ' Cek kolom lookup lainnya (jika ingin)
+            'di bawah ini adalah pengecekan kolom dan penyembunyian kolom sama seperti di atas
             If DgvJadwal.Columns.Contains("username_dosen") Then
                 DgvJadwal.Columns("username_dosen").Visible = False
             End If
-
+            'menyesuaikan kolom agar sesuai dengan kebutuhan tampilan
             DgvJadwal.AutoResizeColumns()
 
         Catch ex As Exception
@@ -116,10 +104,10 @@ Public Class FormKelolaJadwal
         End If
 
         Try
-            ' Ambil Value dari ComboBox (ID Matkul dan Username Dosen)
+            'ambil value dari ComboBox (ID Matkul dan Username Dosen)
             Dim idMatkul As String = CmbMatkul.SelectedValue.ToString()
             Dim usernameDosen As String = CmbDosen.SelectedValue.ToString()
-
+            'intinya pada proses tambah ini kita mengirim data ke server menggunakan action create beserta data data yang di ambil dari form
             Dim postData As String = "action=create" &
                                      "&id_matkul=" & HttpUtility.UrlEncode(idMatkul) &
                                      "&username_dosen=" & HttpUtility.UrlEncode(usernameDosen) &
@@ -153,42 +141,35 @@ Public Class FormKelolaJadwal
             Try
                 Dim row As DataGridViewRow = DgvJadwal.Rows(e.RowIndex)
 
-                ' Simpan ID Jadwal ke Tag form untuk operasi Edit/Hapus
+                'simpan id jadwal ke tag form untuk operasi edit/hapus
                 Me.Tag = row.Cells("id_jadwal").Value.ToString()
 
-                ' Muat data ke kontrol
+                'muat data ke kontrol
                 TxtKelas.Text = row.Cells("kelas").Value.ToString()
                 CmbHari.Text = row.Cells("hari").Value.ToString()
                 TxtJamMulai.Text = row.Cells("jam_mulai").Value.ToString()
                 TxtJamSelesai.Text = row.Cells("jam_selesai").Value.ToString()
                 TxtPengumuman.Text = row.Cells("pengumuman").Value.ToString()
-
-                ' Muat ComboBox berdasarkan DISPLAY MEMBER
+                'memuat cmb box berdasarrkan display member
                 CmbMatkul.Text = row.Cells("nama_matkul").Value.ToString()
                 CmbDosen.Text = row.Cells("nama_dosen").Value.ToString()
-
-                ' Aktifkan tombol Edit/Hapus
-                ' BtnTambah.Enabled = False
-                ' BtnEdit.Enabled = True
-                ' BtnHapus.Enabled = True
-
             Catch ex As Exception
-                MsgBox("Error saat memuat data dari tabel: " & ex.Message, MsgBoxStyle.Critical)
+                MsgBox("error saat memuat data dari tabel: " & ex.Message, MsgBoxStyle.Critical)
             End Try
         End If
     End Sub
 
     Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
         If Me.Tag Is Nothing OrElse String.IsNullOrWhiteSpace(Me.Tag.ToString()) Then
-            MsgBox("Pilih jadwal yang akan diedit dari tabel.", MsgBoxStyle.Exclamation)
+            MsgBox("pilih jadwal yang akan diedit dari tabel.", MsgBoxStyle.Exclamation)
             Return
         End If
 
-        ' Ambil Value dari ComboBox
+        'pengambilan value dari cmb box
         Dim idMatkul As String = CmbMatkul.SelectedValue.ToString()
         Dim usernameDosen As String = CmbDosen.SelectedValue.ToString()
         Dim idJadwal As String = Me.Tag.ToString()
-
+        'untuk proses edit kita mengirim data ke server menggunakan action update beserta data data yang di ambil dari form
         Try
             Dim postData As String = "action=update" &
                                      "&id_jadwal=" & HttpUtility.UrlEncode(idJadwal) & ' Kunci
@@ -204,47 +185,48 @@ Public Class FormKelolaJadwal
             Dim result As JObject = JObject.Parse(responseJson.Trim())
 
             If result IsNot Nothing AndAlso result("status")?.ToString() = "success" Then
-                MsgBox(result("message").ToString(), MsgBoxStyle.Information, "Sukses")
+                MsgBox(result("message").ToString(), MsgBoxStyle.Information, "pokoknya sukses")
                 TampilkanDataJadwal()
                 ResetForm()
             Else
-                Dim pesanError As String = If(result("message") IsNot Nothing, result("message").ToString(), "Server merespons error tanpa pesan spesifik.")
-                MsgBox("Gagal mengedit jadwal: " & pesanError, MsgBoxStyle.Exclamation)
+                Dim pesanerror As String = If(result("message") IsNot Nothing, result("message").ToString(), "pokoknya eror dari serper")
+                MsgBox("gagal mengedit jadwal: " & pesanerror, MsgBoxStyle.Exclamation)
             End If
 
         Catch ex As Exception
-            MsgBox("Error saat proses edit jadwal: " & ex.Message, MsgBoxStyle.Critical)
+            MsgBox("error saat proses edit jadwal: " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
     Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
         If Me.Tag Is Nothing OrElse String.IsNullOrWhiteSpace(Me.Tag.ToString()) Then
-            MsgBox("Pilih jadwal yang akan dihapus dari tabel.", MsgBoxStyle.Exclamation)
+            MsgBox("pilih jadwal yang akan dihapus dari tabel.", MsgBoxStyle.Exclamation)
             Return
         End If
 
         Dim idJadwal As String = Me.Tag.ToString()
 
-        If MsgBox("Yakin ingin menghapus jadwal ini?", MsgBoxStyle.YesNo, "Konfirmasi Hapus") = MsgBoxResult.No Then
+        If MsgBox("yakin ingin menghapus jadwal ini?", MsgBoxStyle.YesNo, "konfirmasi dulu sebelum hapus!") = MsgBoxResult.No Then
             Return
         End If
 
         Try
+            'untuk proses hapus kita menggunakan action delete 
             Dim postData As String = "action=delete" & "&id_jadwal=" & HttpUtility.UrlEncode(idJadwal)
             Dim responseJson As String = Koneksi.KirimDataKeAPI(Koneksi.ApiUrl_Kelola_Jadwal, postData)
             Dim result As JObject = JObject.Parse(responseJson.Trim())
 
             If result IsNot Nothing AndAlso result("status")?.ToString() = "success" Then
-                MsgBox(result("message").ToString(), MsgBoxStyle.Information, "Sukses")
+                MsgBox(result("message").ToString(), MsgBoxStyle.Information, "sukses")
                 TampilkanDataJadwal()
                 ResetForm()
             Else
-                Dim pesanError As String = If(result("message") IsNot Nothing, result("message").ToString(), "Server merespons error tanpa pesan spesifik.")
-                MsgBox("Gagal menghapus jadwal: " & pesanError, MsgBoxStyle.Exclamation)
+                Dim pesanError As String = If(result("message") IsNot Nothing, result("message").ToString(), "server capek sehingga merespons error tanpa pesan spesifik.")
+                MsgBox("gagal menghapus jadwal: " & pesanError, MsgBoxStyle.Exclamation)
             End If
 
         Catch ex As Exception
-            MsgBox("Error saat proses hapus jadwal: " & ex.Message, MsgBoxStyle.Critical)
+            MsgBox("error saat proses hapus jadwal: " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 End Class
