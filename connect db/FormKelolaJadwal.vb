@@ -199,6 +199,7 @@ Public Class FormKelolaJadwal
     End Sub
 
     Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
+        'pada bagian ini di gunakan untuk validasi apakah ada data yang di input atau tidak 
         If Me.Tag Is Nothing OrElse String.IsNullOrWhiteSpace(Me.Tag.ToString()) Then
             MsgBox("pilih jadwal yang akan dihapus dari tabel.", MsgBoxStyle.Exclamation)
             Return

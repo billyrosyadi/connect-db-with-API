@@ -1,11 +1,12 @@
 ﻿Imports Newtonsoft.Json
 Imports System.Net
 Imports System.Globalization
-Imports System.Diagnostics ' Untuk Process.Start
+Imports System.Diagnostics
+'bagian di atas di gunakan untuk meng import library yang di perlukan
 
 Public Class DashboardDosen
 
-    ' URL dasar portal web Anda (pastikan ini diganti saat deployment)
+    'pendeklarasian url web untuk keperluan khusus di dalan form ini
     Private Const BaseWebUrl As String = "https://8ed8233ea798.ngrok-free.app/"
 
     ' ===============================================
@@ -143,4 +144,7 @@ Public Class DashboardDosen
         frmAbsensi.ShowDialog()
     End Sub
 
+    Private Sub DgvJadwalHariIni_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvJadwalHariIni.CellContentClick
+
+    End Sub
 End Class

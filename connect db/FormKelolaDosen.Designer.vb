@@ -40,23 +40,24 @@ Partial Class FormKelolaDosen
         BtnKembali = New Button()
         BtnEdit = New Button()
         BtnHapus = New Button()
+        Label7 = New Label()
         CType(DgvDosen, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' DgvDosen
         ' 
         DgvDosen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvDosen.Location = New Point(-2, 284)
+        DgvDosen.Location = New Point(920, 163)
         DgvDosen.Name = "DgvDosen"
         DgvDosen.RowHeadersWidth = 51
         DgvDosen.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DgvDosen.Size = New Size(954, 247)
+        DgvDosen.Size = New Size(954, 694)
         DgvDosen.TabIndex = 0
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(12, 9)
+        Label1.Location = New Point(47, 219)
         Label1.Name = "Label1"
         Label1.Size = New Size(75, 20)
         Label1.TabIndex = 1
@@ -65,7 +66,7 @@ Partial Class FormKelolaDosen
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(12, 40)
+        Label2.Location = New Point(60, 281)
         Label2.Name = "Label2"
         Label2.Size = New Size(49, 20)
         Label2.TabIndex = 2
@@ -74,7 +75,7 @@ Partial Class FormKelolaDosen
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(12, 73)
+        Label3.Location = New Point(47, 362)
         Label3.Name = "Label3"
         Label3.Size = New Size(95, 20)
         Label3.TabIndex = 3
@@ -83,7 +84,7 @@ Partial Class FormKelolaDosen
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(12, 105)
+        Label4.Location = New Point(47, 489)
         Label4.Name = "Label4"
         Label4.Size = New Size(97, 20)
         Label4.TabIndex = 4
@@ -92,7 +93,7 @@ Partial Class FormKelolaDosen
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(12, 135)
+        Label5.Location = New Point(85, 553)
         Label5.Name = "Label5"
         Label5.Size = New Size(46, 20)
         Label5.TabIndex = 5
@@ -101,7 +102,7 @@ Partial Class FormKelolaDosen
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(12, 166)
+        Label6.Location = New Point(68, 425)
         Label6.Name = "Label6"
         Label6.Size = New Size(63, 20)
         Label6.TabIndex = 6
@@ -109,35 +110,35 @@ Partial Class FormKelolaDosen
         ' 
         ' TxtUsername
         ' 
-        TxtUsername.Location = New Point(165, 6)
+        TxtUsername.Location = New Point(210, 212)
         TxtUsername.Name = "TxtUsername"
         TxtUsername.Size = New Size(250, 27)
         TxtUsername.TabIndex = 7
         ' 
         ' TxtNama
         ' 
-        TxtNama.Location = New Point(165, 40)
+        TxtNama.Location = New Point(210, 281)
         TxtNama.Name = "TxtNama"
         TxtNama.Size = New Size(250, 27)
         TxtNama.TabIndex = 8
         ' 
         ' TxtTempatLahir
         ' 
-        TxtTempatLahir.Location = New Point(165, 70)
+        TxtTempatLahir.Location = New Point(210, 355)
         TxtTempatLahir.Name = "TxtTempatLahir"
         TxtTempatLahir.Size = New Size(250, 27)
         TxtTempatLahir.TabIndex = 9
         ' 
         ' TxtEmail
         ' 
-        TxtEmail.Location = New Point(165, 132)
+        TxtEmail.Location = New Point(210, 546)
         TxtEmail.Name = "TxtEmail"
         TxtEmail.Size = New Size(250, 27)
         TxtEmail.TabIndex = 10
         ' 
         ' DtTanggalLahir
         ' 
-        DtTanggalLahir.Location = New Point(165, 103)
+        DtTanggalLahir.Location = New Point(210, 482)
         DtTanggalLahir.Name = "DtTanggalLahir"
         DtTanggalLahir.Size = New Size(250, 27)
         DtTanggalLahir.TabIndex = 11
@@ -146,14 +147,14 @@ Partial Class FormKelolaDosen
         ' 
         CmbKelamin.FormattingEnabled = True
         CmbKelamin.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
-        CmbKelamin.Location = New Point(165, 163)
+        CmbKelamin.Location = New Point(210, 417)
         CmbKelamin.Name = "CmbKelamin"
         CmbKelamin.Size = New Size(250, 28)
         CmbKelamin.TabIndex = 12
         ' 
         ' BtnTambah
         ' 
-        BtnTambah.Location = New Point(12, 205)
+        BtnTambah.Location = New Point(74, 698)
         BtnTambah.Name = "BtnTambah"
         BtnTambah.Size = New Size(94, 29)
         BtnTambah.TabIndex = 13
@@ -162,7 +163,7 @@ Partial Class FormKelolaDosen
         ' 
         ' BtnRefresh
         ' 
-        BtnRefresh.Location = New Point(165, 205)
+        BtnRefresh.Location = New Point(74, 817)
         BtnRefresh.Name = "BtnRefresh"
         BtnRefresh.Size = New Size(94, 29)
         BtnRefresh.TabIndex = 14
@@ -171,7 +172,7 @@ Partial Class FormKelolaDosen
         ' 
         ' BtnKembali
         ' 
-        BtnKembali.Location = New Point(321, 205)
+        BtnKembali.Location = New Point(439, 817)
         BtnKembali.Name = "BtnKembali"
         BtnKembali.Size = New Size(94, 29)
         BtnKembali.TabIndex = 15
@@ -180,7 +181,7 @@ Partial Class FormKelolaDosen
         ' 
         ' BtnEdit
         ' 
-        BtnEdit.Location = New Point(15, 249)
+        BtnEdit.Location = New Point(256, 698)
         BtnEdit.Name = "BtnEdit"
         BtnEdit.Size = New Size(94, 29)
         BtnEdit.TabIndex = 16
@@ -189,18 +190,28 @@ Partial Class FormKelolaDosen
         ' 
         ' BtnHapus
         ' 
-        BtnHapus.Location = New Point(165, 249)
+        BtnHapus.Location = New Point(439, 698)
         BtnHapus.Name = "BtnHapus"
         BtnHapus.Size = New Size(94, 29)
         BtnHapus.TabIndex = 17
         BtnHapus.Text = "Hapus"
         BtnHapus.UseVisualStyleBackColor = True
         ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(796, 23)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(95, 20)
+        Label7.TabIndex = 18
+        Label7.Text = "Kelola dosen"
+        ' 
         ' FormKelolaDosen
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1896, 967)
+        Controls.Add(Label7)
         Controls.Add(BtnHapus)
         Controls.Add(BtnEdit)
         Controls.Add(BtnKembali)
@@ -250,4 +261,5 @@ Partial Class FormKelolaDosen
     Friend WithEvents BtnKembali As Button
     Friend WithEvents BtnEdit As Button
     Friend WithEvents BtnHapus As Button
+    Friend WithEvents Label7 As Label
 End Class

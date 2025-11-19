@@ -50,4 +50,7 @@ Public Class FormSemuaJadwalDosen
         End Try
     End Sub
 
+    Private Sub DgvSemuaJadwal_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSemuaJadwal.CellContentClick
+
+    End Sub
 End Class
