@@ -39,7 +39,7 @@ Public Class FormAbsensiDosen
 
         Try
             ' Panggil API action=read_active_schedule_for_dosen
-            Dim postData As String = "action=read_active_schedule_for_dosen" &
+            Dim postData As String = "action=read_by_dosen_by_day" &
                                      "&username=" & HttpUtility.UrlEncode(usernameDosen)
 
             ' Asumsi API Jadwal digunakan untuk mengambil daftar kelas
@@ -88,11 +88,11 @@ Public Class FormAbsensiDosen
 
         Try
             ' Panggil API action=read_mahasiswa_by_jadwal
-            Dim postData As String = "action=read_mahasiswa_by_jadwal" &
+            Dim postData As String = "action=read_list_absensi" &
                                      "&jadwal_id=" & HttpUtility.UrlEncode(jadwalId)
 
             ' Asumsi API Jadwal digunakan untuk mengambil daftar mahasiswa
-            Dim responseJson As String = Koneksi.KirimDataKeAPI(Koneksi.ApiUrl_Kelola_Jadwal, postData)
+            Dim responseJson As String = Koneksi.KirimDataKeAPI(Koneksi.ApiUrl_Kelola_Absensi, postData)
 
             If String.IsNullOrEmpty(responseJson) OrElse responseJson.Trim() = "[]" Then
                 DgvMahasiswa.DataSource = Nothing

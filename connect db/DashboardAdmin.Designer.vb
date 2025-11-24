@@ -38,7 +38,7 @@ Partial Class DashboardAdmin
         ' KelolaDosen
         ' 
         KelolaDosen.Image = CType(resources.GetObject("KelolaDosen.Image"), Image)
-        KelolaDosen.Location = New Point(374, 54)
+        KelolaDosen.Location = New Point(395, 54)
         KelolaDosen.Name = "KelolaDosen"
         KelolaDosen.Size = New Size(313, 332)
         KelolaDosen.SizeMode = PictureBoxSizeMode.StretchImage

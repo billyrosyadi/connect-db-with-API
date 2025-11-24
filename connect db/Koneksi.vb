@@ -1,6 +1,7 @@
 ﻿Imports System.Net 'diperlukan untuk webclient atau httpwebrequest yang intinya untuk melakukan request ke server API
 Imports System.Text 'di gunakan untuk memanipulasi string karakter
 Imports System.Collections.Specialized 'di gunakan untuk menyiapkan parameter permintaan
+Imports System.IO ' Diperlukan untuk Stream dan StreamReader
 
 
 Module Koneksi
@@ -89,6 +90,25 @@ Module Koneksi
                 responseResult = System.Text.Encoding.UTF8.GetString(responseBytes)
             End Using
             Return responseResult
+        Catch ex As System.Net.WebException ' Menangkap WebException untuk mendapatkan respons error server
+            Dim serverErrorResponse As String = "Tidak ada respons dari server (Timeout/Koneksi)."
+            If ex.Response IsNot Nothing Then
+                ' Coba baca stream respons dari server (ini berisi pesan error PHP)
+                Using reader As New IO.StreamReader(ex.Response.GetResponseStream())
+                    serverErrorResponse = reader.ReadToEnd()
+                End Using
+            End If
+
+            MessageBox.Show(
+                "Gagal Koneksi/Server Error 500. " & vbCrLf &
+                "Detail HTTP Error: " & ex.Message & vbCrLf &
+                "--- PESAN FATAL SERVER PHP: ---" & vbCrLf &
+                serverErrorResponse,
+                "Error API POST (Fatal)",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+            )
+            Return ""
 
         Catch ex As Exception 'menangkap error yang terjadi selama proses koneksi ke API POST
             MessageBox.Show("Gagal Koneksi ke API POST (" & apiUrl & "): " & vbCrLf & "Pesan Error: " & ex.Message, "Error API POST", MessageBoxButtons.OK, MessageBoxIcon.Error)
