@@ -229,4 +229,11 @@ Public Class FormKelolaMahasiswa
         End Try
     End Sub
 
+    Private Sub TxtTempatLahir_TextChanged(sender As Object, e As EventArgs) Handles TxtTempatLahir.TextChanged
+
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
 End Class

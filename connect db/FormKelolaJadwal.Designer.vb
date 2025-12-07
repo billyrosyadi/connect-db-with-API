@@ -22,6 +22,7 @@ Partial Class FormKelolaJadwal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormKelolaJadwal))
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -48,176 +49,207 @@ Partial Class FormKelolaJadwal
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(46, 31)
+        Label1.ForeColor = Color.DarkGoldenrod
+        Label1.Location = New Point(40, 23)
         Label1.Name = "Label1"
-        Label1.Size = New Size(54, 20)
+        Label1.Size = New Size(44, 15)
         Label1.TabIndex = 0
-        Label1.Text = "matkul"
+        Label1.Text = "Matkul"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(46, 68)
+        Label2.ForeColor = Color.DarkGoldenrod
+        Label2.Location = New Point(40, 51)
         Label2.Name = "Label2"
-        Label2.Size = New Size(51, 20)
+        Label2.Size = New Size(40, 15)
         Label2.TabIndex = 1
         Label2.Text = "Dosen"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(46, 112)
+        Label3.ForeColor = Color.DarkGoldenrod
+        Label3.Location = New Point(40, 84)
         Label3.Name = "Label3"
-        Label3.Size = New Size(42, 20)
+        Label3.Size = New Size(34, 15)
         Label3.TabIndex = 2
-        Label3.Text = "kelas"
+        Label3.Text = "Kelas"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(787, 31)
+        Label4.ForeColor = Color.DarkGoldenrod
+        Label4.Location = New Point(689, 23)
         Label4.Name = "Label4"
-        Label4.Size = New Size(37, 20)
+        Label4.Size = New Size(29, 15)
         Label4.TabIndex = 3
         Label4.Text = "Hari"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(787, 68)
+        Label5.ForeColor = Color.DarkGoldenrod
+        Label5.Location = New Point(689, 51)
         Label5.Name = "Label5"
-        Label5.Size = New Size(76, 20)
+        Label5.Size = New Size(61, 15)
         Label5.TabIndex = 4
         Label5.Text = "Jam Mulai"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(787, 112)
+        Label6.ForeColor = Color.DarkGoldenrod
+        Label6.Location = New Point(689, 84)
         Label6.Name = "Label6"
-        Label6.Size = New Size(99, 20)
+        Label6.Size = New Size(83, 15)
         Label6.TabIndex = 5
         Label6.Text = "Pengumuman"
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(1181, 68)
+        Label7.ForeColor = Color.DarkGoldenrod
+        Label7.Location = New Point(969, 52)
         Label7.Name = "Label7"
-        Label7.Size = New Size(85, 20)
+        Label7.Size = New Size(66, 15)
         Label7.TabIndex = 6
         Label7.Text = "Jam Selesai"
         ' 
         ' BtnTambah
         ' 
-        BtnTambah.Location = New Point(107, 180)
+        BtnTambah.BackColor = Color.Ivory
+        BtnTambah.Cursor = Cursors.Hand
+        BtnTambah.ForeColor = Color.DarkGoldenrod
+        BtnTambah.Location = New Point(111, 135)
+        BtnTambah.Margin = New Padding(3, 2, 3, 2)
         BtnTambah.Name = "BtnTambah"
-        BtnTambah.Size = New Size(94, 29)
+        BtnTambah.Size = New Size(82, 22)
         BtnTambah.TabIndex = 7
         BtnTambah.Text = "Tambah"
-        BtnTambah.UseVisualStyleBackColor = True
+        BtnTambah.UseVisualStyleBackColor = False
         ' 
         ' BtnEdit
         ' 
-        BtnEdit.Location = New Point(343, 180)
+        BtnEdit.BackColor = Color.Ivory
+        BtnEdit.Cursor = Cursors.Hand
+        BtnEdit.ForeColor = Color.DarkGoldenrod
+        BtnEdit.Location = New Point(311, 135)
+        BtnEdit.Margin = New Padding(3, 2, 3, 2)
         BtnEdit.Name = "BtnEdit"
-        BtnEdit.Size = New Size(94, 29)
+        BtnEdit.Size = New Size(82, 22)
         BtnEdit.TabIndex = 8
         BtnEdit.Text = "Edit"
-        BtnEdit.UseVisualStyleBackColor = True
+        BtnEdit.UseVisualStyleBackColor = False
         ' 
         ' BtnHapus
         ' 
-        BtnHapus.Location = New Point(597, 180)
+        BtnHapus.BackColor = Color.Ivory
+        BtnHapus.Cursor = Cursors.Hand
+        BtnHapus.ForeColor = Color.DarkGoldenrod
+        BtnHapus.Location = New Point(522, 135)
+        BtnHapus.Margin = New Padding(3, 2, 3, 2)
         BtnHapus.Name = "BtnHapus"
-        BtnHapus.Size = New Size(94, 29)
+        BtnHapus.Size = New Size(82, 22)
         BtnHapus.TabIndex = 9
         BtnHapus.Text = "Hapus"
-        BtnHapus.UseVisualStyleBackColor = True
+        BtnHapus.UseVisualStyleBackColor = False
         ' 
         ' DgvJadwal
         ' 
         DgvJadwal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvJadwal.Location = New Point(1, 269)
+        DgvJadwal.Location = New Point(0, 191)
+        DgvJadwal.Margin = New Padding(3, 2, 3, 2)
         DgvJadwal.Name = "DgvJadwal"
         DgvJadwal.RowHeadersWidth = 51
-        DgvJadwal.Size = New Size(1896, 699)
+        DgvJadwal.Size = New Size(1198, 373)
         DgvJadwal.TabIndex = 10
         ' 
         ' CmbMatkul
         ' 
         CmbMatkul.FormattingEnabled = True
-        CmbMatkul.Location = New Point(127, 31)
+        CmbMatkul.Location = New Point(111, 23)
+        CmbMatkul.Margin = New Padding(3, 2, 3, 2)
         CmbMatkul.Name = "CmbMatkul"
-        CmbMatkul.Size = New Size(564, 28)
+        CmbMatkul.Size = New Size(494, 23)
         CmbMatkul.TabIndex = 11
         ' 
         ' CmbDosen
         ' 
         CmbDosen.FormattingEnabled = True
-        CmbDosen.Location = New Point(127, 68)
+        CmbDosen.Location = New Point(111, 51)
+        CmbDosen.Margin = New Padding(3, 2, 3, 2)
         CmbDosen.Name = "CmbDosen"
-        CmbDosen.Size = New Size(564, 28)
+        CmbDosen.Size = New Size(494, 23)
         CmbDosen.TabIndex = 12
         ' 
         ' CmbHari
         ' 
         CmbHari.FormattingEnabled = True
-        CmbHari.Location = New Point(907, 31)
+        CmbHari.Location = New Point(794, 15)
+        CmbHari.Margin = New Padding(3, 2, 3, 2)
         CmbHari.Name = "CmbHari"
-        CmbHari.Size = New Size(564, 28)
+        CmbHari.Size = New Size(389, 23)
         CmbHari.TabIndex = 13
         ' 
         ' TxtKelas
         ' 
-        TxtKelas.Location = New Point(127, 109)
+        TxtKelas.Location = New Point(111, 82)
+        TxtKelas.Margin = New Padding(3, 2, 3, 2)
         TxtKelas.Name = "TxtKelas"
-        TxtKelas.Size = New Size(564, 27)
+        TxtKelas.Size = New Size(494, 23)
         TxtKelas.TabIndex = 14
         ' 
         ' TxtPengumuman
         ' 
-        TxtPengumuman.Location = New Point(907, 109)
+        TxtPengumuman.Location = New Point(794, 82)
+        TxtPengumuman.Margin = New Padding(3, 2, 3, 2)
         TxtPengumuman.Name = "TxtPengumuman"
-        TxtPengumuman.Size = New Size(564, 27)
+        TxtPengumuman.Size = New Size(389, 23)
         TxtPengumuman.TabIndex = 15
         ' 
         ' TxtJamSelesai
         ' 
-        TxtJamSelesai.Location = New Point(1269, 69)
+        TxtJamSelesai.Location = New Point(1041, 51)
+        TxtJamSelesai.Margin = New Padding(3, 2, 3, 2)
         TxtJamSelesai.Name = "TxtJamSelesai"
-        TxtJamSelesai.Size = New Size(202, 27)
+        TxtJamSelesai.Size = New Size(142, 23)
         TxtJamSelesai.TabIndex = 16
         ' 
         ' TxtJamMulai
         ' 
-        TxtJamMulai.Location = New Point(907, 69)
+        TxtJamMulai.Location = New Point(794, 52)
+        TxtJamMulai.Margin = New Padding(3, 2, 3, 2)
         TxtJamMulai.Name = "TxtJamMulai"
-        TxtJamMulai.Size = New Size(268, 27)
+        TxtJamMulai.Size = New Size(147, 23)
         TxtJamMulai.TabIndex = 17
         ' 
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(787, 152)
+        Label8.ForeColor = Color.DarkGoldenrod
+        Label8.Location = New Point(689, 114)
         Label8.Name = "Label8"
-        Label8.Size = New Size(67, 20)
+        Label8.Size = New Size(54, 15)
         Label8.TabIndex = 18
         Label8.Text = "Ruangan"
         ' 
         ' CmbRuangan
         ' 
         CmbRuangan.FormattingEnabled = True
-        CmbRuangan.Location = New Point(907, 152)
+        CmbRuangan.Location = New Point(794, 111)
+        CmbRuangan.Margin = New Padding(3, 2, 3, 2)
         CmbRuangan.Name = "CmbRuangan"
-        CmbRuangan.Size = New Size(564, 28)
+        CmbRuangan.Size = New Size(389, 23)
         CmbRuangan.TabIndex = 19
         ' 
         ' FormKelolaJadwal
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1898, 971)
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(1195, 559)
         Controls.Add(CmbRuangan)
         Controls.Add(Label8)
         Controls.Add(TxtJamMulai)
@@ -239,9 +271,10 @@ Partial Class FormKelolaJadwal
         Controls.Add(Label2)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.Fixed3D
+        Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
-        MaximumSize = New Size(1920, 1080)
-        MinimumSize = New Size(1918, 1018)
+        MaximumSize = New Size(1682, 821)
+        MinimumSize = New Size(1196, 549)
         Name = "FormKelolaJadwal"
         Text = "FormKelolaJadwal"
         CType(DgvJadwal, ComponentModel.ISupportInitialize).EndInit()

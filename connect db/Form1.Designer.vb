@@ -32,23 +32,25 @@ Partial Class Form1
         ' 
         txtUser.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         txtUser.BorderStyle = BorderStyle.None
-        txtUser.Font = New Font("Unispace", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtUser.Location = New Point(724, 422)
+        txtUser.Font = New Font("Microsoft Sans Serif", 16.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtUser.Location = New Point(456, 242)
+        txtUser.Margin = New Padding(3, 2, 3, 2)
         txtUser.Multiline = True
         txtUser.Name = "txtUser"
-        txtUser.Size = New Size(712, 40)
+        txtUser.Size = New Size(452, 24)
         txtUser.TabIndex = 2
         ' 
         ' txtPass
         ' 
         txtPass.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         txtPass.BorderStyle = BorderStyle.None
-        txtPass.Font = New Font("Unispace", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtPass.Location = New Point(724, 486)
+        txtPass.Font = New Font("Microsoft Sans Serif", 16.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtPass.Location = New Point(456, 280)
+        txtPass.Margin = New Padding(3, 2, 3, 2)
         txtPass.Multiline = True
         txtPass.Name = "txtPass"
         txtPass.PasswordChar = "x"c
-        txtPass.Size = New Size(712, 40)
+        txtPass.Size = New Size(452, 25)
         txtPass.TabIndex = 3
         ' 
         ' Button1
@@ -60,30 +62,33 @@ Partial Class Form1
         Button1.FlatAppearance.MouseDownBackColor = Color.Transparent
         Button1.FlatAppearance.MouseOverBackColor = Color.Transparent
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Sharpy Shadow", 23.9999981F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Button1.Location = New Point(802, 584)
+        Button1.Font = New Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button1.ForeColor = Color.Sienna
+        Button1.Location = New Point(483, 329)
+        Button1.Margin = New Padding(3, 2, 3, 2)
         Button1.Name = "Button1"
-        Button1.Size = New Size(243, 46)
+        Button1.Size = New Size(202, 43)
         Button1.TabIndex = 4
         Button1.Text = "Login"
         Button1.UseVisualStyleBackColor = False
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(1896, 967)
+        ClientSize = New Size(1195, 559)
         Controls.Add(Button1)
         Controls.Add(txtPass)
         Controls.Add(txtUser)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.Fixed3D
+        Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
-        MaximumSize = New Size(1920, 1080)
+        MaximumSize = New Size(1682, 821)
         MdiChildrenMinimizedAnchorBottom = False
-        MinimumSize = New Size(1918, 1018)
+        MinimumSize = New Size(1196, 549)
         Name = "Form1"
         SizeGripStyle = SizeGripStyle.Hide
         Text = "Form1"

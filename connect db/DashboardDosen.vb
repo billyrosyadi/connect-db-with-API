@@ -144,7 +144,7 @@ Public Class DashboardDosen
         frmAbsensi.ShowDialog()
     End Sub
 
-    Private Sub DgvJadwalHariIni_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvJadwalHariIni.CellContentClick
+    Private Sub DgvJadwalHariIni_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 End Class

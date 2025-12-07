@@ -22,6 +22,7 @@ Partial Class FormKelolaDosen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormKelolaDosen))
         DgvDosen = New DataGridView()
         Label1 = New Label()
         Label2 = New Label()
@@ -47,152 +48,192 @@ Partial Class FormKelolaDosen
         ' DgvDosen
         ' 
         DgvDosen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvDosen.Location = New Point(920, 163)
+        DgvDosen.Location = New Point(730, 117)
+        DgvDosen.Margin = New Padding(3, 2, 3, 2)
         DgvDosen.Name = "DgvDosen"
         DgvDosen.RowHeadersWidth = 51
         DgvDosen.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DgvDosen.Size = New Size(954, 694)
+        DgvDosen.Size = New Size(453, 431)
         DgvDosen.TabIndex = 0
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(47, 219)
+        Label1.BackColor = Color.DarkGoldenrod
+        Label1.BorderStyle = BorderStyle.FixedSingle
+        Label1.Font = New Font("Tahoma", 9.75F)
+        Label1.ForeColor = SystemColors.ButtonHighlight
+        Label1.Location = New Point(95, 161)
         Label1.Name = "Label1"
-        Label1.Size = New Size(75, 20)
+        Label1.Size = New Size(67, 18)
         Label1.TabIndex = 1
         Label1.Text = "Username"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(60, 281)
+        Label2.BackColor = Color.DarkGoldenrod
+        Label2.BorderStyle = BorderStyle.FixedSingle
+        Label2.Font = New Font("Tahoma", 9.75F)
+        Label2.ForeColor = SystemColors.ButtonHighlight
+        Label2.Location = New Point(95, 213)
         Label2.Name = "Label2"
-        Label2.Size = New Size(49, 20)
+        Label2.Size = New Size(42, 18)
         Label2.TabIndex = 2
         Label2.Text = "Nama"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(47, 362)
+        Label3.BackColor = Color.DarkGoldenrod
+        Label3.BorderStyle = BorderStyle.FixedSingle
+        Label3.Font = New Font("Tahoma", 9.75F)
+        Label3.ForeColor = SystemColors.ButtonHighlight
+        Label3.Location = New Point(95, 267)
         Label3.Name = "Label3"
-        Label3.Size = New Size(95, 20)
+        Label3.Size = New Size(85, 18)
         Label3.TabIndex = 3
         Label3.Text = "Tempat Lahir"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(47, 489)
+        Label4.BackColor = Color.DarkGoldenrod
+        Label4.BorderStyle = BorderStyle.FixedSingle
+        Label4.Font = New Font("Tahoma", 9.75F)
+        Label4.ForeColor = SystemColors.ButtonHighlight
+        Label4.Location = New Point(95, 367)
         Label4.Name = "Label4"
-        Label4.Size = New Size(97, 20)
+        Label4.Size = New Size(87, 18)
         Label4.TabIndex = 4
         Label4.Text = "Tanggal Lahir"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(85, 553)
+        Label5.BackColor = Color.DarkGoldenrod
+        Label5.BorderStyle = BorderStyle.FixedSingle
+        Label5.Font = New Font("Tahoma", 9.75F)
+        Label5.ForeColor = SystemColors.ButtonHighlight
+        Label5.Location = New Point(95, 415)
         Label5.Name = "Label5"
-        Label5.Size = New Size(46, 20)
+        Label5.Size = New Size(40, 18)
         Label5.TabIndex = 5
         Label5.Text = "Email"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(68, 425)
+        Label6.BackColor = Color.DarkGoldenrod
+        Label6.BorderStyle = BorderStyle.FixedSingle
+        Label6.Font = New Font("Tahoma", 9.75F)
+        Label6.ForeColor = SystemColors.ButtonHighlight
+        Label6.Location = New Point(95, 319)
         Label6.Name = "Label6"
-        Label6.Size = New Size(63, 20)
+        Label6.Size = New Size(54, 18)
         Label6.TabIndex = 6
         Label6.Text = "Kelamin"
         ' 
         ' TxtUsername
         ' 
-        TxtUsername.Location = New Point(210, 212)
+        TxtUsername.Location = New Point(301, 159)
+        TxtUsername.Margin = New Padding(3, 2, 3, 2)
         TxtUsername.Name = "TxtUsername"
-        TxtUsername.Size = New Size(250, 27)
+        TxtUsername.Size = New Size(352, 23)
         TxtUsername.TabIndex = 7
         ' 
         ' TxtNama
         ' 
-        TxtNama.Location = New Point(210, 281)
+        TxtNama.Location = New Point(301, 211)
+        TxtNama.Margin = New Padding(3, 2, 3, 2)
         TxtNama.Name = "TxtNama"
-        TxtNama.Size = New Size(250, 27)
+        TxtNama.Size = New Size(352, 23)
         TxtNama.TabIndex = 8
         ' 
         ' TxtTempatLahir
         ' 
-        TxtTempatLahir.Location = New Point(210, 355)
+        TxtTempatLahir.Location = New Point(301, 265)
+        TxtTempatLahir.Margin = New Padding(3, 2, 3, 2)
         TxtTempatLahir.Name = "TxtTempatLahir"
-        TxtTempatLahir.Size = New Size(250, 27)
+        TxtTempatLahir.Size = New Size(352, 23)
         TxtTempatLahir.TabIndex = 9
         ' 
         ' TxtEmail
         ' 
-        TxtEmail.Location = New Point(210, 546)
+        TxtEmail.Location = New Point(301, 408)
+        TxtEmail.Margin = New Padding(3, 2, 3, 2)
         TxtEmail.Name = "TxtEmail"
-        TxtEmail.Size = New Size(250, 27)
+        TxtEmail.Size = New Size(352, 23)
         TxtEmail.TabIndex = 10
         ' 
         ' DtTanggalLahir
         ' 
-        DtTanggalLahir.Location = New Point(210, 482)
+        DtTanggalLahir.Location = New Point(301, 360)
+        DtTanggalLahir.Margin = New Padding(3, 2, 3, 2)
         DtTanggalLahir.Name = "DtTanggalLahir"
-        DtTanggalLahir.Size = New Size(250, 27)
+        DtTanggalLahir.Size = New Size(352, 23)
         DtTanggalLahir.TabIndex = 11
         ' 
         ' CmbKelamin
         ' 
         CmbKelamin.FormattingEnabled = True
         CmbKelamin.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
-        CmbKelamin.Location = New Point(210, 417)
+        CmbKelamin.Location = New Point(301, 312)
+        CmbKelamin.Margin = New Padding(3, 2, 3, 2)
         CmbKelamin.Name = "CmbKelamin"
-        CmbKelamin.Size = New Size(250, 28)
+        CmbKelamin.Size = New Size(352, 23)
         CmbKelamin.TabIndex = 12
         ' 
         ' BtnTambah
         ' 
-        BtnTambah.Location = New Point(74, 698)
+        BtnTambah.Cursor = Cursors.Hand
+        BtnTambah.ForeColor = Color.Black
+        BtnTambah.Location = New Point(301, 461)
+        BtnTambah.Margin = New Padding(3, 2, 3, 2)
         BtnTambah.Name = "BtnTambah"
-        BtnTambah.Size = New Size(94, 29)
+        BtnTambah.Size = New Size(82, 22)
         BtnTambah.TabIndex = 13
         BtnTambah.Text = "Tambah"
         BtnTambah.UseVisualStyleBackColor = True
         ' 
         ' BtnRefresh
         ' 
-        BtnRefresh.Location = New Point(74, 817)
+        BtnRefresh.Location = New Point(65, 613)
+        BtnRefresh.Margin = New Padding(3, 2, 3, 2)
         BtnRefresh.Name = "BtnRefresh"
-        BtnRefresh.Size = New Size(94, 29)
+        BtnRefresh.Size = New Size(82, 22)
         BtnRefresh.TabIndex = 14
         BtnRefresh.Text = "Refresh"
         BtnRefresh.UseVisualStyleBackColor = True
         ' 
         ' BtnKembali
         ' 
-        BtnKembali.Location = New Point(439, 817)
+        BtnKembali.Location = New Point(384, 613)
+        BtnKembali.Margin = New Padding(3, 2, 3, 2)
         BtnKembali.Name = "BtnKembali"
-        BtnKembali.Size = New Size(94, 29)
+        BtnKembali.Size = New Size(82, 22)
         BtnKembali.TabIndex = 15
         BtnKembali.Text = "Kembali"
         BtnKembali.UseVisualStyleBackColor = True
         ' 
         ' BtnEdit
         ' 
-        BtnEdit.Location = New Point(256, 698)
+        BtnEdit.Cursor = Cursors.Hand
+        BtnEdit.Location = New Point(440, 461)
+        BtnEdit.Margin = New Padding(3, 2, 3, 2)
         BtnEdit.Name = "BtnEdit"
-        BtnEdit.Size = New Size(94, 29)
+        BtnEdit.Size = New Size(82, 22)
         BtnEdit.TabIndex = 16
         BtnEdit.Text = "Edit"
         BtnEdit.UseVisualStyleBackColor = True
         ' 
         ' BtnHapus
         ' 
-        BtnHapus.Location = New Point(439, 698)
+        BtnHapus.Cursor = Cursors.Hand
+        BtnHapus.Location = New Point(571, 461)
+        BtnHapus.Margin = New Padding(3, 2, 3, 2)
         BtnHapus.Name = "BtnHapus"
-        BtnHapus.Size = New Size(94, 29)
+        BtnHapus.Size = New Size(82, 22)
         BtnHapus.TabIndex = 17
         BtnHapus.Text = "Hapus"
         BtnHapus.UseVisualStyleBackColor = True
@@ -200,17 +241,21 @@ Partial Class FormKelolaDosen
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(796, 23)
+        Label7.BackColor = Color.Transparent
+        Label7.Font = New Font("Tahoma", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label7.Location = New Point(673, 35)
         Label7.Name = "Label7"
-        Label7.Size = New Size(95, 20)
+        Label7.Size = New Size(145, 25)
         Label7.TabIndex = 18
         Label7.Text = "Kelola dosen"
         ' 
         ' FormKelolaDosen
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1896, 967)
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(1195, 559)
         Controls.Add(Label7)
         Controls.Add(BtnHapus)
         Controls.Add(BtnEdit)
@@ -231,10 +276,11 @@ Partial Class FormKelolaDosen
         Controls.Add(Label1)
         Controls.Add(DgvDosen)
         FormBorderStyle = FormBorderStyle.Fixed3D
+        Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
-        MaximumSize = New Size(1920, 1080)
+        MaximumSize = New Size(1682, 821)
         MdiChildrenMinimizedAnchorBottom = False
-        MinimumSize = New Size(1918, 1018)
+        MinimumSize = New Size(1196, 549)
         Name = "FormKelolaDosen"
         Text = "FormKelolaDosen"
         WindowState = FormWindowState.Maximized

@@ -37,73 +37,86 @@ Partial Class DashboardAdmin
         ' 
         ' KelolaDosen
         ' 
+        KelolaDosen.BackColor = Color.Transparent
         KelolaDosen.Image = CType(resources.GetObject("KelolaDosen.Image"), Image)
-        KelolaDosen.Location = New Point(395, 54)
+        KelolaDosen.Location = New Point(235, 53)
+        KelolaDosen.Margin = New Padding(3, 2, 3, 2)
         KelolaDosen.Name = "KelolaDosen"
-        KelolaDosen.Size = New Size(313, 332)
+        KelolaDosen.Size = New Size(169, 166)
         KelolaDosen.SizeMode = PictureBoxSizeMode.StretchImage
         KelolaDosen.TabIndex = 1
         KelolaDosen.TabStop = False
         ' 
         ' KelolaMahasiswa
         ' 
+        KelolaMahasiswa.BackColor = Color.Transparent
         KelolaMahasiswa.Image = CType(resources.GetObject("KelolaMahasiswa.Image"), Image)
-        KelolaMahasiswa.Location = New Point(794, 54)
+        KelolaMahasiswa.Location = New Point(540, 53)
+        KelolaMahasiswa.Margin = New Padding(3, 2, 3, 2)
         KelolaMahasiswa.Name = "KelolaMahasiswa"
-        KelolaMahasiswa.Size = New Size(378, 332)
+        KelolaMahasiswa.Size = New Size(150, 166)
         KelolaMahasiswa.SizeMode = PictureBoxSizeMode.StretchImage
         KelolaMahasiswa.TabIndex = 2
         KelolaMahasiswa.TabStop = False
         ' 
         ' KelolaAkun
         ' 
+        KelolaAkun.BackColor = Color.Transparent
         KelolaAkun.Image = CType(resources.GetObject("KelolaAkun.Image"), Image)
-        KelolaAkun.Location = New Point(1281, 64)
+        KelolaAkun.Location = New Point(820, 53)
+        KelolaAkun.Margin = New Padding(3, 2, 3, 2)
         KelolaAkun.Name = "KelolaAkun"
-        KelolaAkun.Size = New Size(333, 332)
+        KelolaAkun.Size = New Size(163, 166)
         KelolaAkun.SizeMode = PictureBoxSizeMode.StretchImage
         KelolaAkun.TabIndex = 3
         KelolaAkun.TabStop = False
         ' 
         ' KelolaJadwal
         ' 
+        KelolaJadwal.BackColor = Color.Transparent
         KelolaJadwal.Image = CType(resources.GetObject("KelolaJadwal.Image"), Image)
-        KelolaJadwal.Location = New Point(619, 437)
+        KelolaJadwal.Location = New Point(345, 277)
+        KelolaJadwal.Margin = New Padding(3, 2, 3, 2)
         KelolaJadwal.Name = "KelolaJadwal"
-        KelolaJadwal.Size = New Size(333, 332)
+        KelolaJadwal.Size = New Size(191, 166)
         KelolaJadwal.SizeMode = PictureBoxSizeMode.StretchImage
         KelolaJadwal.TabIndex = 4
         KelolaJadwal.TabStop = False
         ' 
         ' KelolaRuangan
         ' 
+        KelolaRuangan.BackColor = Color.Transparent
         KelolaRuangan.Image = CType(resources.GetObject("KelolaRuangan.Image"), Image)
-        KelolaRuangan.Location = New Point(1190, 437)
+        KelolaRuangan.Location = New Point(641, 277)
+        KelolaRuangan.Margin = New Padding(3, 2, 3, 2)
         KelolaRuangan.Name = "KelolaRuangan"
-        KelolaRuangan.Size = New Size(333, 332)
+        KelolaRuangan.Size = New Size(200, 166)
         KelolaRuangan.SizeMode = PictureBoxSizeMode.StretchImage
         KelolaRuangan.TabIndex = 5
         KelolaRuangan.TabStop = False
         ' 
         ' DashboardAdmin
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = SystemColors.ControlLight
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
-        ClientSize = New Size(1898, 971)
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(1176, 506)
         Controls.Add(KelolaRuangan)
         Controls.Add(KelolaJadwal)
         Controls.Add(KelolaAkun)
         Controls.Add(KelolaMahasiswa)
         Controls.Add(KelolaDosen)
         FormBorderStyle = FormBorderStyle.Fixed3D
+        Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
-        MaximumSize = New Size(1920, 1080)
+        MaximumSize = New Size(1682, 821)
         MdiChildrenMinimizedAnchorBottom = False
-        MinimumSize = New Size(1918, 1018)
+        MinimumSize = New Size(1196, 549)
         Name = "DashboardAdmin"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "DashboardAdmin"
-        WindowState = FormWindowState.Maximized
         CType(KelolaDosen, ComponentModel.ISupportInitialize).EndInit()
         CType(KelolaMahasiswa, ComponentModel.ISupportInitialize).EndInit()
         CType(KelolaAkun, ComponentModel.ISupportInitialize).EndInit()

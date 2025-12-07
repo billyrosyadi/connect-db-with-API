@@ -22,70 +22,67 @@ Partial Class FormAbsensiDosen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAbsensiDosen))
         CmbJadwal = New ComboBox()
         Label1 = New Label()
-        DgvMahasiswa = New DataGridView()
         BtnSimpan = New Button()
-        CType(DgvMahasiswa, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' CmbJadwal
         ' 
         CmbJadwal.FormattingEnabled = True
-        CmbJadwal.Location = New Point(219, 88)
+        CmbJadwal.Location = New Point(360, 240)
+        CmbJadwal.Margin = New Padding(3, 2, 3, 2)
         CmbJadwal.Name = "CmbJadwal"
-        CmbJadwal.Size = New Size(421, 28)
+        CmbJadwal.Size = New Size(498, 23)
         CmbJadwal.TabIndex = 0
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(106, 91)
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Tahoma", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(255, 240)
         Label1.Name = "Label1"
-        Label1.Size = New Size(86, 20)
+        Label1.Size = New Size(99, 18)
         Label1.TabIndex = 1
-        Label1.Text = "pilih jadwal"
-        ' 
-        ' DgvMahasiswa
-        ' 
-        DgvMahasiswa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvMahasiswa.Location = New Point(1, 196)
-        DgvMahasiswa.Name = "DgvMahasiswa"
-        DgvMahasiswa.RowHeadersWidth = 51
-        DgvMahasiswa.Size = New Size(1900, 838)
-        DgvMahasiswa.TabIndex = 2
+        Label1.Text = "Pilih Jadwal"
         ' 
         ' BtnSimpan
         ' 
-        BtnSimpan.Location = New Point(219, 138)
+        BtnSimpan.BackColor = Color.DarkGoldenrod
+        BtnSimpan.BackgroundImageLayout = ImageLayout.Stretch
+        BtnSimpan.Font = New Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        BtnSimpan.Location = New Point(543, 288)
+        BtnSimpan.Margin = New Padding(3, 2, 3, 2)
         BtnSimpan.Name = "BtnSimpan"
-        BtnSimpan.Size = New Size(94, 29)
+        BtnSimpan.Size = New Size(104, 32)
         BtnSimpan.TabIndex = 3
         BtnSimpan.Text = "Simpan"
-        BtnSimpan.UseVisualStyleBackColor = True
+        BtnSimpan.UseVisualStyleBackColor = False
         ' 
         ' FormAbsensiDosen
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1898, 1029)
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(1195, 559)
         Controls.Add(BtnSimpan)
-        Controls.Add(DgvMahasiswa)
         Controls.Add(Label1)
         Controls.Add(CmbJadwal)
         FormBorderStyle = FormBorderStyle.Fixed3D
+        Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
-        MaximumSize = New Size(1920, 1080)
-        MinimumSize = New Size(1918, 1018)
+        MaximumSize = New Size(1682, 821)
+        MinimumSize = New Size(1196, 549)
         Name = "FormAbsensiDosen"
         Text = "FormAbsensiDosen"
-        CType(DgvMahasiswa, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents CmbJadwal As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents DgvMahasiswa As DataGridView
     Friend WithEvents BtnSimpan As Button
 End Class
