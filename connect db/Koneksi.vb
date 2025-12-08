@@ -52,7 +52,7 @@ Module Koneksi
         Return responseResult
     End Function
     'di dalam module koneksi.vb ini akan di tambahkan fungsi khusus untuk keperluan CRUD API
-    'Mengambil data JSON dari API menggunakan metode GET di gunakan untuk READ data URL API lengkap,dan mengembalikannya sebagai string teks
+    'mengambil data JSON dari API menggunakan metode GET di gunakan untuk READ data URL API lengkap,dan mengembalikannya sebagai string teks
     Public Function GetJsonFromAPI(ByVal apiUrl As String) As String
         'memastikan variabel memiliki nilai yang jelas sebelum digunakan di blok Try
         Dim responseResult As String = ""
@@ -67,7 +67,7 @@ Module Koneksi
             End Using
             'pada bagian bawah jika terjadi error selama proses koneksi ke API READ, tangkap exception dan tampilkan pesan error
         Catch ex As Exception
-            MessageBox.Show("Gagal Koneksi ke API READ (" & apiUrl & "): " & vbCrLf & "Pesan Error: " & ex.Message, "Error API READ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("gagal koneksi ke API READ (" & apiUrl & "): " & vbCrLf & "pesan error: " & ex.Message, "error API READ", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         Return responseResult
     End Function
@@ -100,18 +100,18 @@ Module Koneksi
             End If
 
             MessageBox.Show(
-                "Gagal Koneksi/Server Error 500. " & vbCrLf &
-                "Detail HTTP Error: " & ex.Message & vbCrLf &
-                "--- PESAN FATAL SERVER PHP: ---" & vbCrLf &
+                "gagal koneksi/server error 500. " & vbCrLf &
+                "detail HTTP error: " & ex.Message & vbCrLf &
+                "pesan fatal dari serper" & vbCrLf &
                 serverErrorResponse,
-                "Error API POST (Fatal)",
+                "error API POST (patal cuy)",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error
             )
             Return ""
 
         Catch ex As Exception 'menangkap error yang terjadi selama proses koneksi ke API POST
-            MessageBox.Show("Gagal Koneksi ke API POST (" & apiUrl & "): " & vbCrLf & "Pesan Error: " & ex.Message, "Error API POST", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("gagal koneksi ke API POST (" & apiUrl & "): " & vbCrLf & "pesan error: " & ex.Message, "error API POST", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return ""
         End Try
     End Function
