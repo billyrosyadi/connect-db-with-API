@@ -36,6 +36,7 @@ Partial Class DashboardDosen
         BtnLihatJadwalLengkap.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         BtnLihatJadwalLengkap.BackColor = Color.Transparent
         BtnLihatJadwalLengkap.BackgroundImageLayout = ImageLayout.None
+        BtnLihatJadwalLengkap.Cursor = Cursors.Hand
         BtnLihatJadwalLengkap.Image = CType(resources.GetObject("BtnLihatJadwalLengkap.Image"), Image)
         BtnLihatJadwalLengkap.Location = New Point(304, 223)
         BtnLihatJadwalLengkap.Margin = New Padding(3, 2, 3, 2)
@@ -51,6 +52,7 @@ Partial Class DashboardDosen
         BtnNilaiWeb.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         BtnNilaiWeb.BackColor = Color.Transparent
         BtnNilaiWeb.BackgroundImageLayout = ImageLayout.None
+        BtnNilaiWeb.Cursor = Cursors.Hand
         BtnNilaiWeb.Image = CType(resources.GetObject("BtnNilaiWeb.Image"), Image)
         BtnNilaiWeb.Location = New Point(562, 223)
         BtnNilaiWeb.Margin = New Padding(3, 2, 3, 2)
@@ -66,6 +68,7 @@ Partial Class DashboardDosen
         BtnAbsensi.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         BtnAbsensi.BackColor = Color.Transparent
         BtnAbsensi.BackgroundImageLayout = ImageLayout.None
+        BtnAbsensi.Cursor = Cursors.Hand
         BtnAbsensi.Image = CType(resources.GetObject("BtnAbsensi.Image"), Image)
         BtnAbsensi.Location = New Point(815, 223)
         BtnAbsensi.Margin = New Padding(3, 2, 3, 2)

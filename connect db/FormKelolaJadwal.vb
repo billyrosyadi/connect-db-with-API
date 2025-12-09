@@ -61,17 +61,14 @@ Public Class FormKelolaJadwal
             MsgBox("gagal memuat daftar dosen: " & ex.Message, MsgBoxStyle.Critical)
         End Try
 
-        ' ==========================================================
-        ' LOGIKA MEMUAT DAFTAR RUANGAN
-        ' ==========================================================
+
         Try
-            ' ApiUrl_Kelola_Ruangan harus didefinisikan di Modul Koneksi
+            'pada bagian ini memanggil kirim data ke api untuk meminta daftar ruangan yang tersedia dari server menggunakan action read
             Dim jsonRuangan As String = Koneksi.KirimDataKeAPI(Koneksi.ApiUrl_Kelola_Ruangan, "action=read")
-            Dim dtRuangan As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonRuangan)
+            Dim dtRuangan As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonRuangan) 'merubah data mentah dari server menjadi data yang bisa di gunakan aplikasi
 
             If dtRuangan IsNot Nothing AndAlso dtRuangan.Rows.Count > 0 Then
                 CmbRuangan.DataSource = dtRuangan
-                ' Nama kolom HARUS SAMA PERSIS dengan manage_ruangan.php
                 CmbRuangan.DisplayMember = "nama_ruangan"
                 CmbRuangan.ValueMember = "id_ruangan"
                 CmbRuangan.SelectedIndex = -1
@@ -113,17 +110,17 @@ Public Class FormKelolaJadwal
                 DgvJadwal.Columns("username_dosen").Visible = False
             End If
 
-            If DgvJadwal.Columns.Contains("id_matkul") Then ' <-- Sembunyikan ID Matkul
+            If DgvJadwal.Columns.Contains("id_matkul") Then 'tempat membunyikan ID Matkul
                 DgvJadwal.Columns("id_matkul").Visible = False
             End If
 
-            If DgvJadwal.Columns.Contains("id_ruangan") Then ' <-- Sembunyikan ID Ruangan
+            If DgvJadwal.Columns.Contains("id_ruangan") Then 'sembunyikan ID Ruangan
                 DgvJadwal.Columns("id_ruangan").Visible = False
             End If
-            ' Atur Header yang tampil (Opsional, tapi disarankan)
+            'mengatur Header yang tampil
             If DgvJadwal.Columns.Contains("nama_matkul") Then DgvJadwal.Columns("nama_matkul").HeaderText = "mata kuliah"
             If DgvJadwal.Columns.Contains("nama_dosen") Then DgvJadwal.Columns("nama_dosen").HeaderText = "dosen pengampu"
-            If DgvJadwal.Columns.Contains("nama_ruangan") Then DgvJadwal.Columns("nama_ruangan").HeaderText = "ruangan" '//<-- Tambahkan ini
+            If DgvJadwal.Columns.Contains("nama_ruangan") Then DgvJadwal.Columns("nama_ruangan").HeaderText = "ruangan"
             'menyesuaikan kolom agar sesuai dengan kebutuhan tampilan
             DgvJadwal.AutoResizeColumns()
 
@@ -133,9 +130,9 @@ Public Class FormKelolaJadwal
     End Sub
 
     Private Sub BtnTambah_Click(sender As Object, e As EventArgs) Handles BtnTambah.Click
-        If CmbMatkul.SelectedIndex = -1 Or CmbDosen.SelectedIndex = -1 Or CmbHari.SelectedIndex = -1 Or CmbRuangan.SelectedIndex = -1 Or String.IsNullOrWhiteSpace(TxtJamMulai.Text) Then ' <--- TAMBAH VALIDASI CmbRuangan
+        If CmbMatkul.SelectedIndex = -1 Or CmbDosen.SelectedIndex = -1 Or CmbHari.SelectedIndex = -1 Or CmbRuangan.SelectedIndex = -1 Or String.IsNullOrWhiteSpace(TxtJamMulai.Text) Then ' 
             MsgBox("Lengkapi data Mata Kuliah, Dosen, Hari, Jam Mulai, dan Ruangan.", MsgBoxStyle.Exclamation)
-            Return
+            Return 'di bagian ini di gunakan untuk mengvalidasi setiap bagian agar benar benar terisi, jika sudah benar benar tersisi maka proses lanjutan bisa berlanjut
         End If
 
         Try
