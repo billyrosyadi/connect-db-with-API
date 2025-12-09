@@ -22,6 +22,7 @@ Partial Class FormKelolaAkun
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormKelolaAkun))
         Username = New Label()
         Role = New Label()
         Label3 = New Label()
@@ -38,33 +39,42 @@ Partial Class FormKelolaAkun
         ' Username
         ' 
         Username.AutoSize = True
-        Username.Location = New Point(58, 33)
+        Username.BackColor = Color.Transparent
+        Username.Font = New Font("Tahoma", 9.75F, FontStyle.Bold)
+        Username.ForeColor = Color.DarkGoldenrod
+        Username.Location = New Point(295, 105)
         Username.Name = "Username"
-        Username.Size = New Size(60, 15)
+        Username.Size = New Size(71, 16)
         Username.TabIndex = 0
         Username.Text = "Username"
         ' 
         ' Role
         ' 
         Role.AutoSize = True
-        Role.Location = New Point(58, 62)
+        Role.BackColor = Color.Transparent
+        Role.Font = New Font("Tahoma", 9.75F, FontStyle.Bold)
+        Role.ForeColor = Color.DarkGoldenrod
+        Role.Location = New Point(295, 134)
         Role.Name = "Role"
-        Role.Size = New Size(30, 15)
+        Role.Size = New Size(35, 16)
         Role.TabIndex = 1
         Role.Text = "Role"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(58, 89)
+        Label3.BackColor = Color.Transparent
+        Label3.Font = New Font("Tahoma", 9.75F, FontStyle.Bold)
+        Label3.ForeColor = Color.DarkGoldenrod
+        Label3.Location = New Point(295, 161)
         Label3.Name = "Label3"
-        Label3.Size = New Size(57, 15)
+        Label3.Size = New Size(70, 16)
         Label3.TabIndex = 2
         Label3.Text = "Password"
         ' 
         ' TxtUsername
         ' 
-        TxtUsername.Location = New Point(191, 33)
+        TxtUsername.Location = New Point(428, 105)
         TxtUsername.Margin = New Padding(3, 2, 3, 2)
         TxtUsername.Name = "TxtUsername"
         TxtUsername.Size = New Size(417, 23)
@@ -72,7 +82,7 @@ Partial Class FormKelolaAkun
         ' 
         ' TxtPassword
         ' 
-        TxtPassword.Location = New Point(191, 84)
+        TxtPassword.Location = New Point(428, 156)
         TxtPassword.Margin = New Padding(3, 2, 3, 2)
         TxtPassword.Name = "TxtPassword"
         TxtPassword.Size = New Size(417, 23)
@@ -81,7 +91,7 @@ Partial Class FormKelolaAkun
         ' CmbRole
         ' 
         CmbRole.FormattingEnabled = True
-        CmbRole.Location = New Point(191, 56)
+        CmbRole.Location = New Point(428, 128)
         CmbRole.Margin = New Padding(3, 2, 3, 2)
         CmbRole.Name = "CmbRole"
         CmbRole.Size = New Size(417, 23)
@@ -89,48 +99,59 @@ Partial Class FormKelolaAkun
         ' 
         ' BtnTambah
         ' 
-        BtnTambah.Location = New Point(191, 160)
+        BtnTambah.BackColor = Color.Bisque
+        BtnTambah.Font = New Font("Tahoma", 9.75F)
+        BtnTambah.ForeColor = Color.DarkGoldenrod
+        BtnTambah.Location = New Point(393, 230)
         BtnTambah.Margin = New Padding(3, 2, 3, 2)
         BtnTambah.Name = "BtnTambah"
         BtnTambah.Size = New Size(82, 22)
         BtnTambah.TabIndex = 6
         BtnTambah.Text = "Tambah"
-        BtnTambah.UseVisualStyleBackColor = True
+        BtnTambah.UseVisualStyleBackColor = False
         ' 
         ' BtnEdit
         ' 
-        BtnEdit.Location = New Point(339, 160)
+        BtnEdit.BackColor = Color.Bisque
+        BtnEdit.Font = New Font("Tahoma", 9.75F)
+        BtnEdit.ForeColor = Color.DarkGoldenrod
+        BtnEdit.Location = New Point(541, 230)
         BtnEdit.Margin = New Padding(3, 2, 3, 2)
         BtnEdit.Name = "BtnEdit"
         BtnEdit.Size = New Size(82, 22)
         BtnEdit.TabIndex = 7
         BtnEdit.Text = "Edit"
-        BtnEdit.UseVisualStyleBackColor = True
+        BtnEdit.UseVisualStyleBackColor = False
         ' 
         ' BtnHapus
         ' 
-        BtnHapus.Location = New Point(479, 160)
+        BtnHapus.BackColor = Color.Bisque
+        BtnHapus.Font = New Font("Tahoma", 9.75F)
+        BtnHapus.ForeColor = Color.DarkGoldenrod
+        BtnHapus.Location = New Point(681, 230)
         BtnHapus.Margin = New Padding(3, 2, 3, 2)
         BtnHapus.Name = "BtnHapus"
         BtnHapus.Size = New Size(82, 22)
         BtnHapus.TabIndex = 8
         BtnHapus.Text = "Hapus"
-        BtnHapus.UseVisualStyleBackColor = True
+        BtnHapus.UseVisualStyleBackColor = False
         ' 
         ' DgvAkun
         ' 
         DgvAkun.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvAkun.Location = New Point(-2, 198)
+        DgvAkun.Location = New Point(-2, 298)
         DgvAkun.Margin = New Padding(3, 2, 3, 2)
         DgvAkun.Name = "DgvAkun"
         DgvAkun.RowHeadersWidth = 51
-        DgvAkun.Size = New Size(1662, 531)
+        DgvAkun.Size = New Size(1662, 431)
         DgvAkun.TabIndex = 9
         ' 
         ' FormKelolaAkun
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1195, 559)
         Controls.Add(DgvAkun)
         Controls.Add(BtnHapus)
@@ -145,7 +166,7 @@ Partial Class FormKelolaAkun
         FormBorderStyle = FormBorderStyle.Fixed3D
         Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
-        MaximumSize = New Size(1682, 821)
+        MaximumSize = New Size(1215, 602)
         MinimumSize = New Size(1196, 549)
         Name = "FormKelolaAkun"
         Text = "FormKelolaAkun"

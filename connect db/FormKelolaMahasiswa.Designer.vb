@@ -65,44 +65,52 @@ Partial Class FormKelolaMahasiswa
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.White
+        Label1.BorderStyle = BorderStyle.Fixed3D
         Label1.Font = New Font("Tahoma", 9.75F)
         Label1.ForeColor = Color.DarkGoldenrod
         Label1.Location = New Point(10, 14)
         Label1.Name = "Label1"
-        Label1.Size = New Size(29, 16)
+        Label1.Size = New Size(31, 18)
         Label1.TabIndex = 1
         Label1.Text = "NIM"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.White
+        Label2.BorderStyle = BorderStyle.Fixed3D
         Label2.Font = New Font("Tahoma", 9.75F)
         Label2.ForeColor = Color.DarkGoldenrod
         Label2.Location = New Point(10, 68)
         Label2.Name = "Label2"
-        Label2.Size = New Size(47, 16)
+        Label2.Size = New Size(49, 18)
         Label2.TabIndex = 2
         Label2.Text = "Alamat"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.White
+        Label3.BorderStyle = BorderStyle.Fixed3D
         Label3.Font = New Font("Tahoma", 9.75F)
         Label3.ForeColor = Color.DarkGoldenrod
         Label3.Location = New Point(10, 41)
         Label3.Name = "Label3"
-        Label3.Size = New Size(40, 16)
+        Label3.Size = New Size(42, 18)
         Label3.TabIndex = 2
         Label3.Text = "Nama"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
+        Label4.BackColor = Color.White
+        Label4.BorderStyle = BorderStyle.Fixed3D
         Label4.Font = New Font("Tahoma", 9.75F)
         Label4.ForeColor = Color.DarkGoldenrod
         Label4.Location = New Point(10, 95)
         Label4.Name = "Label4"
-        Label4.Size = New Size(52, 16)
+        Label4.Size = New Size(54, 18)
         Label4.TabIndex = 3
         Label4.Text = "Kelamin"
         ' 
@@ -145,11 +153,13 @@ Partial Class FormKelolaMahasiswa
         ' Label10
         ' 
         Label10.AutoSize = True
+        Label10.BackColor = Color.White
+        Label10.BorderStyle = BorderStyle.Fixed3D
         Label10.Font = New Font("Tahoma", 9.75F)
         Label10.ForeColor = Color.DarkGoldenrod
         Label10.Location = New Point(10, 122)
         Label10.Name = "Label10"
-        Label10.Size = New Size(38, 16)
+        Label10.Size = New Size(40, 18)
         Label10.TabIndex = 9
         Label10.Text = "Email"
         ' 
@@ -196,7 +206,6 @@ Partial Class FormKelolaMahasiswa
         ' CmbKelamin
         ' 
         CmbKelamin.FormattingEnabled = True
-        CmbKelamin.Items.AddRange(New Object() {"Laki-laki", "Perempuan"})
         CmbKelamin.Location = New Point(100, 95)
         CmbKelamin.Margin = New Padding(3, 2, 3, 2)
         CmbKelamin.Name = "CmbKelamin"

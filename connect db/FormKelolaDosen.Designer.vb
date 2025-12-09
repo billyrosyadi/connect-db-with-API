@@ -59,78 +59,72 @@ Partial Class FormKelolaDosen
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.DarkGoldenrod
-        Label1.BorderStyle = BorderStyle.FixedSingle
-        Label1.Font = New Font("Tahoma", 9.75F)
-        Label1.ForeColor = SystemColors.ButtonHighlight
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Tahoma", 11.25F, FontStyle.Bold)
+        Label1.ForeColor = Color.DarkGoldenrod
         Label1.Location = New Point(95, 161)
         Label1.Name = "Label1"
-        Label1.Size = New Size(67, 18)
+        Label1.Size = New Size(83, 18)
         Label1.TabIndex = 1
         Label1.Text = "Username"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.BackColor = Color.DarkGoldenrod
-        Label2.BorderStyle = BorderStyle.FixedSingle
-        Label2.Font = New Font("Tahoma", 9.75F)
-        Label2.ForeColor = SystemColors.ButtonHighlight
+        Label2.BackColor = Color.Transparent
+        Label2.Font = New Font("Tahoma", 11.25F, FontStyle.Bold)
+        Label2.ForeColor = Color.DarkGoldenrod
         Label2.Location = New Point(95, 213)
         Label2.Name = "Label2"
-        Label2.Size = New Size(42, 18)
+        Label2.Size = New Size(51, 18)
         Label2.TabIndex = 2
         Label2.Text = "Nama"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.BackColor = Color.DarkGoldenrod
-        Label3.BorderStyle = BorderStyle.FixedSingle
-        Label3.Font = New Font("Tahoma", 9.75F)
-        Label3.ForeColor = SystemColors.ButtonHighlight
+        Label3.BackColor = Color.Transparent
+        Label3.Font = New Font("Tahoma", 11.25F, FontStyle.Bold)
+        Label3.ForeColor = Color.DarkGoldenrod
         Label3.Location = New Point(95, 267)
         Label3.Name = "Label3"
-        Label3.Size = New Size(85, 18)
+        Label3.Size = New Size(106, 18)
         Label3.TabIndex = 3
         Label3.Text = "Tempat Lahir"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.BackColor = Color.DarkGoldenrod
-        Label4.BorderStyle = BorderStyle.FixedSingle
-        Label4.Font = New Font("Tahoma", 9.75F)
-        Label4.ForeColor = SystemColors.ButtonHighlight
+        Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Tahoma", 11.25F, FontStyle.Bold)
+        Label4.ForeColor = Color.DarkGoldenrod
         Label4.Location = New Point(95, 367)
         Label4.Name = "Label4"
-        Label4.Size = New Size(87, 18)
+        Label4.Size = New Size(110, 18)
         Label4.TabIndex = 4
         Label4.Text = "Tanggal Lahir"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.BackColor = Color.DarkGoldenrod
-        Label5.BorderStyle = BorderStyle.FixedSingle
-        Label5.Font = New Font("Tahoma", 9.75F)
-        Label5.ForeColor = SystemColors.ButtonHighlight
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Tahoma", 11.25F, FontStyle.Bold)
+        Label5.ForeColor = Color.DarkGoldenrod
         Label5.Location = New Point(95, 415)
         Label5.Name = "Label5"
-        Label5.Size = New Size(40, 18)
+        Label5.Size = New Size(49, 18)
         Label5.TabIndex = 5
         Label5.Text = "Email"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.BackColor = Color.DarkGoldenrod
-        Label6.BorderStyle = BorderStyle.FixedSingle
-        Label6.Font = New Font("Tahoma", 9.75F)
-        Label6.ForeColor = SystemColors.ButtonHighlight
+        Label6.BackColor = Color.Transparent
+        Label6.Font = New Font("Tahoma", 11.25F, FontStyle.Bold)
+        Label6.ForeColor = Color.DarkGoldenrod
         Label6.Location = New Point(95, 319)
         Label6.Name = "Label6"
-        Label6.Size = New Size(54, 18)
+        Label6.Size = New Size(68, 18)
         Label6.TabIndex = 6
         Label6.Text = "Kelamin"
         ' 
@@ -187,7 +181,8 @@ Partial Class FormKelolaDosen
         ' BtnTambah
         ' 
         BtnTambah.Cursor = Cursors.Hand
-        BtnTambah.ForeColor = Color.Black
+        BtnTambah.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        BtnTambah.ForeColor = Color.DarkGoldenrod
         BtnTambah.Location = New Point(301, 461)
         BtnTambah.Margin = New Padding(3, 2, 3, 2)
         BtnTambah.Name = "BtnTambah"
@@ -219,6 +214,8 @@ Partial Class FormKelolaDosen
         ' BtnEdit
         ' 
         BtnEdit.Cursor = Cursors.Hand
+        BtnEdit.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        BtnEdit.ForeColor = Color.DarkGoldenrod
         BtnEdit.Location = New Point(440, 461)
         BtnEdit.Margin = New Padding(3, 2, 3, 2)
         BtnEdit.Name = "BtnEdit"
@@ -230,6 +227,8 @@ Partial Class FormKelolaDosen
         ' BtnHapus
         ' 
         BtnHapus.Cursor = Cursors.Hand
+        BtnHapus.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        BtnHapus.ForeColor = Color.DarkGoldenrod
         BtnHapus.Location = New Point(571, 461)
         BtnHapus.Margin = New Padding(3, 2, 3, 2)
         BtnHapus.Name = "BtnHapus"
@@ -256,6 +255,7 @@ Partial Class FormKelolaDosen
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1195, 559)
+        ControlBox = False
         Controls.Add(Label7)
         Controls.Add(BtnHapus)
         Controls.Add(BtnEdit)
@@ -278,7 +278,7 @@ Partial Class FormKelolaDosen
         FormBorderStyle = FormBorderStyle.Fixed3D
         Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
-        MaximumSize = New Size(1682, 821)
+        MaximumSize = New Size(1215, 602)
         MdiChildrenMinimizedAnchorBottom = False
         MinimumSize = New Size(1196, 549)
         Name = "FormKelolaDosen"

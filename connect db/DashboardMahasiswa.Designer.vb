@@ -26,14 +26,15 @@ Partial Class DashboardMahasiswa
         ' 
         ' DashboardMahasiswa
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1896, 967)
+        ClientSize = New Size(1195, 559)
         FormBorderStyle = FormBorderStyle.Fixed3D
+        Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
-        MaximumSize = New Size(1920, 1080)
+        MaximumSize = New Size(1215, 602)
         MdiChildrenMinimizedAnchorBottom = False
-        MinimumSize = New Size(1918, 1018)
+        MinimumSize = New Size(1196, 549)
         Name = "DashboardMahasiswa"
         Text = "DashboardMahasiswa"
         WindowState = FormWindowState.Maximized

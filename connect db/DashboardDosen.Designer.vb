@@ -77,7 +77,7 @@ Partial Class DashboardDosen
         ' 
         ' DashboardDosen
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
@@ -88,7 +88,7 @@ Partial Class DashboardDosen
         FormBorderStyle = FormBorderStyle.Fixed3D
         Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
-        MaximumSize = New Size(1682, 821)
+        MaximumSize = New Size(1215, 602)
         MdiChildrenMinimizedAnchorBottom = False
         MinimumSize = New Size(1196, 549)
         Name = "DashboardDosen"
